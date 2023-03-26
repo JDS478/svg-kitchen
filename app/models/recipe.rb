@@ -1,4 +1,4 @@
 class Recipe < ApplicationRecord
   belongs_to :user
-  has_one :photo
+  has_many_attached :photos
 end
