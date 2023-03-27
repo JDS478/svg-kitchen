@@ -1,9 +1,11 @@
-<div id="navbar-cont">
+<div id="navbar-container">
   <div id="nav-menu">
+    <h4>Menu</h4>
   </div>
   <div id="nav-header">
     <h1>Savage Kitchen.</h1>
   </div>
-  <div id="navbar-login">
+  <div>
+    <%= link_to 'Login', new_user_session_path, id: "navbar-login" %>
   </div>
 </div>
