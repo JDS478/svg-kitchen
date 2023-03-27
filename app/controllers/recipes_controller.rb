@@ -24,6 +24,14 @@ class RecipesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @recipe.update(recipe_params)
+    redirect_to recipe_path(@recipe)
+  end
+
   def destroy
     @recipe.delete
     redirect_to user_path(current_user)
