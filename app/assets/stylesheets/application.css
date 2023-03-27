@@ -1,0 +1,6 @@
+@import "components/index.scss";
+
+// Universal Style Rules
+html {
+  background-color: whitesmoke;
+}
