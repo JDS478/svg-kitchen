@@ -40,7 +40,8 @@ User.create(
   first_name: "Joel",
   last_name: "Savage",
   password: "patt123",
-  email: "js@savages.com"
+  email: "js@savages.com",
+  admin: true
 )
 puts "Admin #{User.last.first_name} created!"
 # ---admin creation---
