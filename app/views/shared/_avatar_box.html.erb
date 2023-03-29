@@ -1,11 +1,12 @@
 <div id="avatar-box">
-  <h4>Hi <%= current_user.first_name %>!</h4>
   <% if current_user.photo.key %>
     <%= cl_image_tag current_user.photo.key, crop: fill, width: 50 %>
   <% else %>
-    <%# <img src="https://gravatar.com/avatar/11c3d8a919f0c0d0e57c207a68cb85e3?size=100&d=https%3A%2F%2Fassets.untappd.com%2Fsite%2Fassets%2Fimages%2Fdefault_avatar_v3_gravatar.jpg%3Fv%3D2" width="40"> %>
+    <%= link_to user_path(current_user) do %>
+      <img src="https://gravatar.com/avatar/11c3d8a919f0c0d0e57c207a68cb85e3?size=100&d=https%3A%2F%2Fassets.untappd.com%2Fsite%2Fassets%2Fimages%2Fdefault_avatar_v3_gravatar.jpg%3Fv%3D2" width="40">
+    <% end %>
   <% end %>
   <div>
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "navbar-login" %>
+    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "navbar-login logout-btn" %>
   </div>
 </div>

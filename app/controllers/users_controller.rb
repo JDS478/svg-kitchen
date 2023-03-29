@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
   skip_before_action :authenticate_user!, only: %i[show]
 
@@ -16,6 +16,6 @@ class UserController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params:[id])
+    @user = User.find(params[:id])
   end
 end
