@@ -15,7 +15,12 @@
   </a>
 
   <div>
-    <%= link_to 'Login', new_user_session_path, id: "navbar-login" %>
+    <%# <%= user_signed_in? ? render 'shared/avatar_box' : link_to 'Login', new_user_session_path, id: "navbar-login" %>
+    <% if user_signed_in? %>
+      <%= render 'shared/avatar_box' %>
+    <% else %>
+      <%= link_to 'Login', new_user_session_path, class: "navbar-login" %>
+    <% end %>
   </div>
 
 </div>
