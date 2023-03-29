@@ -1,0 +1,15 @@
+#home-about {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+
+  h3 {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    width: fit-content;
+    padding: 5px;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+}
