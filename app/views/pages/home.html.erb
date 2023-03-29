@@ -18,9 +18,19 @@
         <a class="btn-dis" href="/recipes">Discover</a>
       </div>
     </div>
+    <%# Recipe OTD %>
     <div id="rotd">
-      <%= render 'shared/recipe_card' %>
+      <div class="recipe-card">
+        <div class="img-holder">
+          <% if @rand_recipe.photo.key %>
+            <%= cl_image_tag recipe.photo.key crop: fill, width: 40 %>
+          <% else %>
+            <img src="image.png" alt="Default recipe photo" width="40">
+          <% end %>
+        </div>
+      </div>
     </div>
+
   </div>
 
 
