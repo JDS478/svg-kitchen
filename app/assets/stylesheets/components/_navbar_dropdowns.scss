@@ -56,6 +56,9 @@
   transform: translateX(-50%);
   visibility: hidden;
   opacity: 0;
+  width: 4em;
+  display: flex;
+  flex-direction: column;
   background-color: rgba($color: #d6fafe, $alpha: 1.0);  padding: 10px;
   border-radius: 5px;
   transition: visibility 0s, opacity 0.5s ease-in-out;
