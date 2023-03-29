@@ -11,13 +11,17 @@
   <div id="home-about">
     <h3>Welcome To the Savage Kitchen</h3>
   </div>
-
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.dorchestercollection.com/wp-content/uploads/Paris-le-meurice-cedric-grolet1.jpg);">
-  <div style="padding:4px;">
-    <h1>Find your passion for food</h1> <br>
-    <a class="btn-dis" href="/recipes">Discover</a>
+  <div class="banner-box">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.dorchestercollection.com/wp-content/uploads/Paris-le-meurice-cedric-grolet1.jpg);">
+      <div style="padding:4px;">
+        <h1>Find your next showpiece...</h1> <br>
+        <a class="btn-dis" href="/recipes">Discover</a>
+      </div>
+    </div>
+    <div id="rotd">
+      <%= render 'shared/recipe_card' %>
+    </div>
   </div>
-</div>
 
 
 </div>

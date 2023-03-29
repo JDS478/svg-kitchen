@@ -1,9 +1,19 @@
 .banner {
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   padding: 150px 10px;
   border-radius: 4px;
   width: 50%;
+  margin-right: 1px;
+  animation: shrink infinite 5s alternate;
+}
+@keyframes shrink {
+  0% {
+    background-size: 110% 110%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
 }
 
 .banner h1 {
