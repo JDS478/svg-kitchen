@@ -1,24 +1,5 @@
-# README
+# Savage kitchen.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# About
+🧑‍🍳 <br>
+The Savage Kitchen is a social platform designed to connect like-minded food lovers and to upload their favorite recipes. Users will be able to chat and review their favorite recipes as well as write posts regarding the food community.

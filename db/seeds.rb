@@ -12,6 +12,8 @@ Recipe.destroy_all
 puts "Recipes deleted!"
 Post.destroy_all
 puts "Posts deleted!"
+puts "Categories deleted!"
+Category.destroy_all
 puts "------------------"
 puts "DB Reset!"
 
@@ -55,11 +57,25 @@ puts "=================="
 puts ""
 
 puts "=================="
+puts "Creating Categories..."
+puts "=================="
+
+categories = ["Breakfast", "Lunch", "Dinner", "Snacks"]
+categories.each do |category|
+  Category.create(title: category)
+end
+
+puts "=================="
+puts "Created Categories!"
+puts "=================="
+
+puts ""
+
+puts "=================="
 puts "Creating Recipes..."
 puts "=================="
 
 # --- NOKIGIRI SEED FOR RECIPES ---
-
 # food_item = Faker::Dessert.variety
 # food_url = "https://www.allrecipes.com/search?q=#{food_item}"
 # results = []
@@ -77,12 +93,12 @@ puts "=================="
 #   recipe.user = User.all.sample
 #   recipe.save
 # end
-
 # --- NOKIGIRI SEED FOR RECIPES ---
 
 5.times do
-  recipe = Recipe.new(title: Faker::Dessert.variety, content: Faker::Dessert.flavor)
+  recipe = Recipe.new(title: Faker::Dessert.variety, content: Faker::Dessert.flavor, difficulty: (0..5).to_a.sample)
   recipe.user = User.all.sample
+  recipe.category = Category.all.sample
   recipe.save
 end
 
@@ -115,6 +131,7 @@ puts ""
 puts "Users count: #{User.all.length}"
 puts "Posts count: #{Post.all.length}"
 puts "Recipes count: #{Recipe.all.length}"
+puts "Categories count: #{Category.all.length}"
 
 puts ""
 
