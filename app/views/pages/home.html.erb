@@ -1,4 +1,6 @@
+<br>
 <div class="page-container">
+
   <%# Slideshow %>
   <div class="slider">
     <div class="slide"></div>
@@ -6,24 +8,53 @@
     <div class="slide"></div>
     <div class="slide"></div>
     <div class="slide"></div>
+    <div id="home-about">
+      <%# <h3 id="slider-header">
+        Welcome To the Savage Kitchen <br>
+        Find your next showpiece...
+      </h3> %>
+    </div>
+  </div>
+</div>
+
+<br>
+
+  <div id="discover-gap">
+    <a class="btn-dis" href="/recipes">Discover</a>
   </div>
 
-  <div id="home-about">
-    <h3>Welcome To the Savage Kitchen</h3>
+<br>
+
+<div class="page-container" style="display:flex; justify-content:space-between;">
+  <div id="mid-info">
+    <div id="mid-title">
+      <p>
+        Welcome to <strong>Savage Kitchen</strong>, the ultimate destination for food lovers! Our website is designed to showcase delicious recipes and connect you with culinary professionals who can help take your cooking to the next level.
+        With our diverse collection of recipes from different cuisines and culinary traditions, you're sure to find something that suits your taste.
+      </p>
+    </div>
+    <div id="recipe-showcase">
+      <div>
+        <img style="border-radius: 6px;" src="https://preppykitchen.com/wp-content/uploads/2022/05/Naked-Cake-Recipe-Card.jpg" alt="ROTD" width="300">
+      </div>
+      <br>
+      <div>
+        <span class="info-sect">Category: <%= @rand_recipe.category.title %></span> <span class="info-sect">Difficulty: <%= @rand_recipe.difficulty %></span>
+      </div>
+      <br>
+      <div class="recipe-desc">
+        <%= @rand_recipe.content %>
+      </div>
+    </div>
   </div>
+
   <div class="banner-box">
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.dorchestercollection.com/wp-content/uploads/Paris-le-meurice-cedric-grolet1.jpg);">
       <div style="padding:4px;">
-        <h1>Find your next showpiece...</h1> <br>
-        <a class="btn-dis" href="/recipes">Discover</a>
+        <h4>Meet new food enthusiasts</h4>
       </div>
     </div>
-    <%# Recipe OTD %>
-
       </div>
     </div>
-
   </div>
-
-
 </div>
