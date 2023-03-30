@@ -1,0 +1,60 @@
+.slider {
+  overflow: hidden;
+  border-radius: 4px;
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  text-align: center;
+ }
+
+ .slider .slide {
+  position: absolute;
+  top: 0;
+  opacity: 75%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: slider 12.5s infinite;
+ }
+
+ .slider .slide:nth-child(1) {
+    background-image: url('https://www.parisperfect.com/blog/wp-content/uploads/2009/05/gorgeous-patisseries.jpg');
+    animation-delay: 0s;
+ }
+
+ .slider .slide:nth-child(2) {
+    background-image: url('https://www.lapatisserieshoreham.co.uk/uploads/files/dscf3252_banner_1.jpg');
+    animation-delay: -2.5s;
+ }
+
+ .slider .slide:nth-child(3) {
+    background-image: url('https://img.theculturetrip.com/wp-content/uploads/2021/12/c419pr_--prisma-by-dukas-presseagentur-gmbh-alamy-stock-photo.jpg');
+    animation-delay: -5s;
+ }
+
+ .slider .slide:nth-child(4) {
+    background-image: url('https://www.corinthia.com/media/2367/loic-pastry-chef-corinthia.jpg');
+    animation-delay: -7.5s;
+ }
+
+ .slider .slide:nth-child(5) {
+    background-image: url('https://www.foodandwine.com/thmb/yQTNEbWHsdLXI6xCC5G1WX-vlXU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-become-a-pastry-chef-blog1117-ae277b717f924fbcb2ad5b36f6cf278b.jpg');
+    animation-delay: -10s;
+ }
+
+ @keyframes slider {
+  0%, 16%, 100% {
+    transform: translateX(0);
+    animation-timing-function: ease;
+  }
+  20% {
+    transform: translateX(-100%);
+    animation-timing-function: step-end;
+  }
+  96% {
+    transform: translateX(100%);
+    animation-timing-function: ease;
+  }
+ }

@@ -1,0 +1,26 @@
+<div id="navbar-container">
+
+  <div class="dropdown" id="nav-menu">
+    <h4 class="dropbtn">Menu</h4>
+    <div class="dropdown-content">
+      <%= link_to 'Recipes', recipes_path, class: "drop-cont" %>
+      <%= link_to 'posts', posts_path, class: "drop-cont" %>
+    </div>
+  </div>
+
+  <a href="/" id="home-link">
+    <div id="nav-header">
+      <h1>Savage Kitchen.</h1>
+    </div>
+  </a>
+
+  <div>
+    <%# <%= user_signed_in? ? render 'shared/avatar_box' : link_to 'Login', new_user_session_path, id: "navbar-login" %>
+    <% if user_signed_in? %>
+      <%= render 'shared/avatar_box' %>
+    <% else %>
+      <%= link_to 'Login', new_user_session_path, class: "navbar-login" %>
+    <% end %>
+  </div>
+
+</div>
