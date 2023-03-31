@@ -1,0 +1,8 @@
+<div>
+  <%= simple_form_for(@recipe_new) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :category, collection: ['Breakfast', 'Lunch', 'Dinner', 'Dessert', 'Snacks'] %>
+    <%= f.input :ingredients %>
+    <%= f.input :content %>
+  <% end %>
+</div>

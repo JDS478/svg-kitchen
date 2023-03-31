@@ -2,11 +2,10 @@
   display: flex;
   // justify-content: center;
   align-items: center;
-  // justify-content: center;
   flex-wrap: wrap;
 }
 
-#rec-head-box {
+.rec-head-box {
   height: fit-content;
   width: fit-content;
   background-color: white;
@@ -15,7 +14,7 @@
   margin: 10px auto;
 }
 
-#recipes-header {
+.recipes-header {
   color: teal;
   border-top: 2px solid black;
   border-bottom: 2px solid black;

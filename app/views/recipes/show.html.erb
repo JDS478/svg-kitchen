@@ -1,1 +1,32 @@
-<h1><%= @recipe.title %></h1>
+<div class="rec-head-box">
+  <h1 class="recipes-header-show"><%= @recipe.title %></h1>
+</div>
+
+<div class="page-container" style="display:flex; justify-content:space-between;">
+  <div class="rec-show-img">
+    <% if @recipe.photo.key %>
+      <%= cl_image_tag(@recipe.photo.key, class: "show-img", crop: fill) %>
+    <% else %>
+      <img src="https://static.adelaidesfinest.com.au/uploads/2022/11/Small_Cake_Bundle_30841-1920x1280.jpg" alt="Def. cake image" class="show-img">
+    <% end %>
+  </div>
+
+  <div class="show-info">
+    <div>Category: <%= @recipe.category.title %></div>
+    <br>
+    <div>Difficulty: <%= @recipe.difficulty %></div>
+  </div>
+
+  <div class="recipe-card-desc" style="width:30%; margin: auto 0; border:1px solid black;">
+    <%= @recipe.desc %>
+  </div>
+</div>
+
+<br>
+
+<%# REVIEW SECT TODO: %>
+<%# <% if @recipe.reviews %>
+  <%# <div class="page-container"> %>
+    <%# <%= render partial: "reviews" %>
+  <%# </div> %>
+<%# <% end %>
