@@ -1,18 +1,22 @@
+
 <div class="recipe-card">
-    <div class="img-holder">
-    <a href="/recipes/<%= recipe.id %>">
-      <% if recipe.photo.key %>
-        <%= cl_image_tag(recipe.photo.key crop: fill, width: 100, class: "rec-img") %>
-      <% else %>
-        <img src="https://media.timeout.com/images/105371284/image.jpg" alt="Default recipe photo" width="100" class="rec-img">
-      <% end %>
-    </a>
-    </div>
-    <div class="recipe-info">
-      <%= recipe.desc %>
-    </div>
-    <div class="recipe-stats">
-      <span class="info-sect">Category: <%= recipe.category.title %></span>
-      <span class="info-sect">Difficulty: <%= recipe.difficulty %></span>
-    </div>
+
+  <div class="rec-card-img">
+    <%= link_to recipe_path(recipe), class: "recipe-linker" do %>
+      <img style="border-radius: 6px;" src="https://preppykitchen.com/wp-content/uploads/2022/05/Naked-Cake-Recipe-Card.jpg" alt="ROTD" class="rec-img">
+    <% end %>
+  </div>
+
+  <br>
+
+  <div class="card-info">
+    <div class="info-sect">Category: <%= recipe.category.title %></div> <div class="info-sect">Difficulty: <%= recipe.difficulty %></div>
+  </div>
+
+  <br>
+
+  <div class="recipe-card-desc">
+    <%= recipe.desc %>
+  </div>
+
 </div>

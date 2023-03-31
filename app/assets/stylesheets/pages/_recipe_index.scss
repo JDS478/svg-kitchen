@@ -1,7 +1,25 @@
 #all-recipes {
   display: flex;
-  justify-content: space-around;
+  // justify-content: center;
   align-items: center;
   // justify-content: center;
   flex-wrap: wrap;
+}
+
+#rec-head-box {
+  height: fit-content;
+  width: fit-content;
+  background-color: white;
+  border-radius: 4px;
+  padding: 2px;
+  margin: 10px auto;
+}
+
+#recipes-header {
+  color: teal;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 3px;
+  margin: 10px 10px;
+  width: fit-content;
 }
