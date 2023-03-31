@@ -1,9 +1,9 @@
 <div class="recipe-card">
   <div class="img-holder">
     <% if recipe.photo.key %>
-      <%= cl_image_tag recipe.photo.key crop: fill, width: 40 %>
+      <%= cl_image_tag recipe.photo.key crop: fill, width: 100 %>
     <% else %>
-      <img src="image.png" alt="Default recipe photo" width="40">
+      <img src="" alt="Default recipe photo" width="100">
     <% end %>
   </div>
 </div>
