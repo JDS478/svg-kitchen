@@ -1,9 +1,9 @@
 <h1>Recipes.</h1>
 
 <div class="page-container">
-  <% @recipes.each do |recipe| %>
-    <a href="/recipe/<%= recipe.id %>">
+  <div id="all-recipes">
+    <% @recipes.each do |recipe| %>
       <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
-    </a>
-  <% end %>
+    <% end %>
+  </div>
 </div>

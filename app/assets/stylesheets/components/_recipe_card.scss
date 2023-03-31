@@ -1,9 +1,10 @@
-#recipe-card {
+.recipe-card {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0.5em;
-  width: 75%;
+  height: 10em;
+  width: 30%;
   border-radius: 8px;
   background-color: bisque;
   padding: 1em;
@@ -14,4 +15,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 10em;
+
+  .rec-img {
+    width: 100%;
+  }
+}
+
+.recipe-info {
+  margin: 3px;
+  height: 90%;
+  border-radius: 8px;
+  padding: 3px;
+  width: 40%;
+  overflow: hidden;
+  background-color: white;
+}
+
+.recipe-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

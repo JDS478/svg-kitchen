@@ -1,9 +1,18 @@
 <div class="recipe-card">
-  <div class="img-holder">
-    <% if recipe.photo.key %>
-      <%= cl_image_tag recipe.photo.key crop: fill, width: 100 %>
-    <% else %>
-      <img src="" alt="Default recipe photo" width="100">
-    <% end %>
-  </div>
+    <div class="img-holder">
+    <a href="/recipes/<%= recipe.id %>">
+      <% if recipe.photo.key %>
+        <%= cl_image_tag(recipe.photo.key crop: fill, width: 100, class: "rec-img") %>
+      <% else %>
+        <img src="https://media.timeout.com/images/105371284/image.jpg" alt="Default recipe photo" width="100" class="rec-img">
+      <% end %>
+    </a>
+    </div>
+    <div class="recipe-info">
+      <%= recipe.desc %>
+    </div>
+    <div class="recipe-stats">
+      <span class="info-sect">Category: <%= recipe.category.title %></span>
+      <span class="info-sect">Difficulty: <%= recipe.difficulty %></span>
+    </div>
 </div>

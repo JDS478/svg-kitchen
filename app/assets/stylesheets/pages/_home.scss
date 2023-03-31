@@ -25,7 +25,7 @@
 
 .banner-box {
   display: flex;
-  width: 40%;
+  width: 53%;
   transition: ease-in-out 0.3s;
   margin: 5px;
   // box-shadow: 1px 3px 4px rgba(0,0,0,0.2);
@@ -83,8 +83,9 @@
 .recipe-desc {
   background-color: whitesmoke;
   border-radius: 4px;
-  width: 70%;
+  width: 90%;
   padding: 0.5em;
+  height: 8em;
   overflow-y: scroll;
   scrollbar-width: none; /* Hide scrollbar for Firefox */
   -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */

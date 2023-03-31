@@ -7,7 +7,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = params[:id]
   end
 
   def new
