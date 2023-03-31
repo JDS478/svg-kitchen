@@ -1,4 +1,4 @@
-<div class="rec-head-box">
+<div style="border-radius: 8px;" class="rec-head-box">
   <h1 class="recipes-header-show"><%= @recipe.title %></h1>
 </div>
 
@@ -27,9 +27,20 @@
   </div>
   </div>
 
+  <% if @recipe.user == current_user %>
+    <%= link_to 'Edit', edit_recipe_path, class: "edit-btn" %>
+    <%= link_to 'Delete', recipe_path, {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "del-btn" %>
+  <% end %>
+
   <div class="recipe-show-desc">
     <%= @recipe.desc %>
   </div>
+</div>
+
+<br>
+
+<div class="page-container" style="display:flex; justify-content:space-between; align-items:center;">
+
 </div>
 
 <br>

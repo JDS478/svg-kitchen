@@ -32,15 +32,11 @@
 
 .info-pill {
   padding: 0.5em;
+  text-align: left;
   border-radius: 20px;
   background-color: white;
+  width: 13em;
   font-family: 'IBM Plex Sans', sans-serif;
-}
-
-.recipe-show-desc {
-  width: 30%;
-  height: 90%;
-  background-color: bisque;
 }
 
 .user-rec-link {
@@ -51,5 +47,14 @@
 
 .user-rec-link:hover {
   text-shadow: 0px 3px 3px rgba(0,0,0,0.2);
-  // font-weight: bold;
+  // background-color: blanchedalmond;
 }
+
+  .recipe-show-desc {
+    width: 30%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 90%;
+    border-radius: 25px;
+    padding: 1em;
+    background-color: bisque;
+  }
