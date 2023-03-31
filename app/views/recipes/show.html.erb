@@ -2,7 +2,8 @@
   <h1 class="recipes-header-show"><%= @recipe.title %></h1>
 </div>
 
-<div class="page-container" style="display:flex; justify-content:space-between;">
+<div class="page-container" style="display:flex; justify-content:space-between; align-items:center;">
+  <div style="height:auto; width:90%; display:flex;">
   <div class="rec-show-img">
     <% if @recipe.photo.key %>
       <%= cl_image_tag(@recipe.photo.key, class: "show-img", crop: fill) %>
@@ -12,12 +13,21 @@
   </div>
 
   <div class="show-info">
-    <div>Category: <%= @recipe.category.title %></div>
+    <div class="info-pill">
+      <div>Category: <%= @recipe.category.title %></div>
+    </div>
     <br>
-    <div>Difficulty: <%= @recipe.difficulty %></div>
+    <div class="info-pill">
+      <div>Difficulty: <%= @recipe.difficulty %></div>
+    </div>
+    <br>
+    <div class="info-pill">
+      <div>Posted By: <a class="user-rec-link" href="/users/<%= @recipe.user.id %>"><%= @recipe.user.first_name %>  <%= @recipe.user.last_name %></div></a>
+    </div>
+  </div>
   </div>
 
-  <div class="recipe-card-desc" style="width:30%; margin: auto 0; border:1px solid black;">
+  <div class="recipe-show-desc">
     <%= @recipe.desc %>
   </div>
 </div>
