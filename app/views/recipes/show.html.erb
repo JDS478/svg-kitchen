@@ -29,8 +29,22 @@
 
   <% if @recipe.user == current_user %>
     <%= link_to 'Edit', edit_recipe_path, class: "edit-btn" %>
-    <%= link_to 'Delete', recipe_path, {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "del-btn" %>
+    <%# <%= link_to 'Delete', recipe_path, {turbo_method: :delete}%>
   <% end %>
+
+</div>
+
+<br>
+
+<div class="page-container" style="display:flex; justify-content:space-between; align-items:center;">
+  <div class="recipe-show-desc">
+    <h3 class="ing-header">Ingredients:</h3>
+    <ul class="ingr-list">
+      <% @recipe.ingredients.each do |ingr| %>
+        <li class="ingr-item"><%= ingr %></li>
+      <% end %>
+    </ul>
+  </div>
 
   <div class="recipe-show-desc">
     <%= @recipe.desc %>
@@ -39,15 +53,13 @@
 
 <br>
 
-<div class="page-container" style="display:flex; justify-content:space-between; align-items:center;">
 
+<div class="page-container" style="display:flex; flex-wrap:wrap; justify-content:space-around;">
+  <% if @recipe.reviews.length > 0 %>
+    <% @recipe.reviews.each do |review| %>
+      <%= render partial: "shared/review_card" %>
+    <% end %>
+  <% else %>
+    <h2 class="no-rev">No Reviews Yet!</h2>
+  <% end %>
 </div>
-
-<br>
-
-<%# REVIEW SECT TODO: %>
-<%# <% if @recipe.reviews %>
-  <%# <div class="page-container"> %>
-    <%# <%= render partial: "reviews" %>
-  <%# </div> %>
-<%# <% end %>

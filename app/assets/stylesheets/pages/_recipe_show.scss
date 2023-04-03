@@ -49,11 +49,27 @@
   text-shadow: 0px 3px 3px rgba(0,0,0,0.2);
 }
 
-  .recipe-show-desc {
-    width: 30%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 90%;
-    border-radius: 25px;
-    padding: 1em;
-    background-color: bisque;
-  }
+.recipe-show-desc {
+  width: 30%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 90%;
+  border-radius: 25px;
+  padding: 0.5em;
+  background-color: bisque;
+}
+
+.no-rev {
+  color: teal;
+  border-left: solid 2px black;
+  border-right: solid 2px black;
+  width: fit-content;
+}
+
+.ing-header {
+  padding: 0.5em;
+  margin: none;
+  background-color: white;
+  width: fit-content;
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}

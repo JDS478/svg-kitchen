@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.shuffle
   end
 
   def show
