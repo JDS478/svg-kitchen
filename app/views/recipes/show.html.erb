@@ -28,8 +28,7 @@
   </div>
 
   <% if @recipe.user == current_user %>
-    <%= link_to 'Edit', edit_recipe_path, class: "edit-btn" %>
-    <%# <%= link_to 'Delete', recipe_path, {turbo_method: :delete}%>
+    <%= render partial: 'rec_edit_controls' %>
   <% end %>
 
 </div>
