@@ -58,7 +58,19 @@
   background-color: bisque;
 }
 
-.no-rev {
+#rev-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.new-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rev-sect-header {
   color: teal;
   border-left: solid 2px black;
   border-right: solid 2px black;

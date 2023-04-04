@@ -7,7 +7,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe_new = Recipe.new
+    @reviews = @recipe.reviews
+    @review = Review.new
   end
 
   def new

@@ -67,16 +67,24 @@
 <br>
 
 <%# Recipe reviews section %>
-<div class="page-container" style="display:flex; flex-wrap:wrap; justify-content:center;">
-  <% if @recipe.reviews.length > 0 %>
-    <% @recipe.reviews.each do |review| %>
-      <%= render partial: "shared/review_card" %>
+<div class="page-container" style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center;">
+  <%# Render all Reviews %>
+  <h2 class="rev-sect-header">Reviews</h2>
+  <div id="rev-section">
+    <% if @reviews.length > 0 %>
+      <% @reviews.each do |review| %>
+        <%= render partial: "reviews/review_card", locals: {review: review} %>
+      <% end %>
+    <% else %>
+      <h2 class="rev-sect-header">No Reviews Yet!</h2>
     <% end %>
-  <% else %>
-    <h2 class="no-rev">No Reviews Yet!</h2>
-  <% end %>
+  </div>
+</div>
 
+  <%# Review form section %>
+<div class="page-container new-review" style="text-align:center;">
+  <h2 class="rev-sect-header" style="margin:20px auto; ">Leave a Review</h2>
   <div class="create-rev">
-
+    <%= render 'review_form' %>
   </div>
 </div>

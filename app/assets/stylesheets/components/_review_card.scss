@@ -1,0 +1,36 @@
+.review-card {
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: space-evenly;
+  height: 10em;
+  width: 20em;
+  background-color: rgb(66, 189, 189);
+}
+
+.review-info {
+  display: flex;
+  padding: 0.5em;
+  border-radius: 6px;
+  background-color: white;
+  font-family: 'IBM Plex Sans', sans-serif;
+  max-height: 100%;
+  height: fit-content;
+}
+
+.review-content {
+  padding: 1em;
+  margin: 0.5em;
+  background-color: white;
+  border-radius: 6px !important;
+  max-height: 100%;
+  // overflow: scroll;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  // mask-image: linear-gradient(to bottom, black calc(100% - 48px), transparent 100%);
+}
+.review-content::-webkit-scrollbar {
+  width: 0;
+}
