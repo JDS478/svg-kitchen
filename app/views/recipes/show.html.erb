@@ -83,13 +83,15 @@
 
   <%# Review form section %>
 <div class="page-container new-review" style="text-align:center;">
-  <h2 class="rev-sect-header" style="margin:20px auto; ">Leave a Review</h2>
-  <br>
-  <div class="create-rev" style="text-align:center; display:flex; justify-content:center;">
-    <% if user_signed_in? %>
-    <%= render 'review_form' %>
-    <% else %>
-      <h3 class="rev-sect-header-2" style="margin:0 auto;">Please Sign in to review</h3>
-    <% end %>
-  </div>
+  <% if user_signed_in? %>
+    <h2 class="rev-sect-header" style="margin:20px auto; ">Leave a Review</h2>
+    <br>
+    <div class="create-rev" style="text-align:center; display:flex; justify-content:center;">
+      <% if user_signed_in? %>
+      <%= render 'review_form' %>
+      <% else %>
+        <h3 class="rev-sect-header-2" style="margin:0 auto;">Please Sign in to review</h3>
+      <% end %>
+    </div>
+  <% end %>
 </div>
