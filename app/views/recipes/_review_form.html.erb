@@ -1,5 +1,10 @@
-<%= simple_form_for [@recipe, @review] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.submit %>
-<% end %>
+<div class="rev-form-box">
+  <%= simple_form_for [@recipe, @review], class:"review-form" do |f| %>
+    <%= f.input :title, input_html: { class: "rev-input-box", required: true } %>
+    <%= f.input :content, input_html: { class: "rev-input-text", required: true } %>
+    <%= f.button :submit, class: "submit-btn" %>
+  <% end %>
+</div>
+
+
+<%# input_html: { required: true } %>

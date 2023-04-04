@@ -85,7 +85,7 @@
 <div class="page-container new-review" style="text-align:center;">
   <h2 class="rev-sect-header" style="margin:20px auto; ">Leave a Review</h2>
   <br>
-  <div class="create-rev" style="text-align:center;">
+  <div class="create-rev" style="text-align:center; display:flex; justify-content:center;">
     <% if user_signed_in? %>
     <%= render 'review_form' %>
     <% else %>

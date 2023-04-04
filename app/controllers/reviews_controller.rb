@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to recipe_path(@review.recipe)
     else
-      render :new, status: :unprocessable_entity
+      redirect_to recipe_path(params[:recipe_id])
     end
   end
 
