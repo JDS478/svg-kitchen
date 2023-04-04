@@ -87,3 +87,13 @@
   height: auto;
   width: auto;
 }
+
+.recipe-user-link {
+  text-decoration: none;
+  transition: ease-in-out 0.2s;
+  color:teal;
+}
+
+.recipe-user-link:hover {
+  text-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
