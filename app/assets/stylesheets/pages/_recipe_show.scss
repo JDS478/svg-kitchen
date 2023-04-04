@@ -27,7 +27,7 @@
 .show-img {
   width: 100%;
   box-shadow: 0 2px 3px rgba(0,0,0,0.3);
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .info-pill {
@@ -73,4 +73,12 @@
   width: fit-content;
   border-radius: 8px;
   font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+.user-rec-desc {
+  margin: auto;
+  text-align: left;
+  padding: 1em;
+  width: fit-content;
+  max-height: 100%;
 }

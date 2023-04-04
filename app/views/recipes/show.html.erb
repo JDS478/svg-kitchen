@@ -1,59 +1,73 @@
 <div style="border-radius: 8px;" class="rec-head-box">
   <h1 class="recipes-header-show"><%= @recipe.title %></h1>
 </div>
-
+<%# Main info section for recipe %>
 <div class="page-container" style="display:flex; justify-content:space-between; align-items:center;">
-  <div style="height:auto; width:90%; display:flex;">
-  <div class="rec-show-img">
-    <% if @recipe.photo.key %>
-      <%= cl_image_tag(@recipe.photo.key, class: "show-img", crop: fill) %>
-    <% else %>
-      <img src="https://static.adelaidesfinest.com.au/uploads/2022/11/Small_Cake_Bundle_30841-1920x1280.jpg" alt="Def. cake image" class="show-img">
-    <% end %>
+  <div style="height:auto; width:60%; display:flex;">
+    <div class="rec-show-img">
+      <% if @recipe.photo.key %>
+        <%= cl_image_tag(@recipe.photo.key, class: "show-img", crop: fill) %>
+      <% else %>
+        <img src="https://static.adelaidesfinest.com.au/uploads/2022/11/Small_Cake_Bundle_30841-1920x1280.jpg" alt="Def. cake image" class="show-img">
+      <% end %>
+    </div>
+
+    <div class="show-info">
+      <div class="info-pill">
+        <div>Category: <%= @recipe.category.title %></div>
+      </div>
+      <br>
+      <div class="info-pill">
+        <div>Difficulty: <%= @recipe.difficulty %></div>
+      </div>
+      <br>
+      <div class="info-pill">
+        <div>Posted By: <a class="user-rec-link" href="/users/<%= @recipe.user.id %>"><%= @recipe.user.first_name %>  <%= @recipe.user.last_name %></div></a>
+      </div>
+    </div>
   </div>
 
-  <div class="show-info">
-    <div class="info-pill">
-      <div>Category: <%= @recipe.category.title %></div>
-    </div>
-    <br>
-    <div class="info-pill">
-      <div>Difficulty: <%= @recipe.difficulty %></div>
-    </div>
-    <br>
-    <div class="info-pill">
-      <div>Posted By: <a class="user-rec-link" href="/users/<%= @recipe.user.id %>"><%= @recipe.user.first_name %>  <%= @recipe.user.last_name %></div></a>
-    </div>
-  </div>
+  <div class="recipe-show-desc user-rec-desc">
+    <h4 style="margin:none; font-family: 'IBM Plex Sans', sans-serif;">
+      <%= @recipe.user.first_name %>'s thoughts
+    </h4>
+    <%= @recipe.user_desc %>
   </div>
 
-  <% if @recipe.user == current_user || current_user.admin %>
+  <% if @recipe.user == current_user || (user_signed_in? && current_user.admin) %>
     <%= render partial: 'shared/rec_edit_controls' %>
   <% end %>
 
 </div>
 
 <br>
-
+<%# Recipe ingredients and method %>
 <div class="page-container" style="display:flex; justify-content:space-between; align-items:center;">
   <div class="recipe-show-desc">
-    <h3 class="ing-header">Ingredients:</h3>
+    <h3 class="ing-header">
+      Ingredients:
+    </h3>
+
     <ul class="ingr-list">
       <% @recipe.ingredients.each do |ingr| %>
         <li class="ingr-item"><%= ingr %></li>
       <% end %>
     </ul>
+
   </div>
 
   <div class="recipe-show-desc">
+  <h3 class="ing-header">
+      Method:
+    </h3>
     <%= @recipe.desc %>
   </div>
 </div>
 
 <br>
 
-
-<div class="page-container" style="display:flex; flex-wrap:wrap; justify-content:space-around;">
+<%# Recipe reviews section %>
+<div class="page-container" style="display:flex; flex-wrap:wrap; justify-content:center;">
   <% if @recipe.reviews.length > 0 %>
     <% @recipe.reviews.each do |review| %>
       <%= render partial: "shared/review_card" %>
@@ -61,4 +75,8 @@
   <% else %>
     <h2 class="no-rev">No Reviews Yet!</h2>
   <% end %>
+
+  <div class="create-rev">
+
+  </div>
 </div>
