@@ -1,1 +1,97 @@
-<h1><%= @recipe.title %></h1>
+<div style="border-radius: 8px;" class="rec-head-box">
+  <h1 class="recipes-header-show"><%= @recipe.title %></h1>
+</div>
+<%# Main info section for recipe %>
+<div class="page-container" style="display:flex; justify-content:space-between; align-items:center;">
+  <div style="height:auto; width:60%; display:flex;">
+    <div class="rec-show-img">
+      <% if @recipe.photo.key %>
+        <%= cl_image_tag(@recipe.photo.key, class: "show-img", crop: fill) %>
+      <% else %>
+        <img src="https://static.adelaidesfinest.com.au/uploads/2022/11/Small_Cake_Bundle_30841-1920x1280.jpg" alt="Def. cake image" class="show-img">
+      <% end %>
+    </div>
+
+    <div class="show-info">
+      <div class="info-pill">
+        <div>Category: <%= @recipe.category.title %></div>
+      </div>
+      <br>
+      <div class="info-pill">
+        <div>Difficulty: <%= @recipe.difficulty %></div>
+      </div>
+      <br>
+      <div class="info-pill">
+        <div>Posted By: <a class="user-rec-link" href="/users/<%= @recipe.user.id %>"><%= @recipe.user.first_name %>  <%= @recipe.user.last_name %></div></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe-show-desc user-rec-desc">
+    <h4 style="margin:none; font-family: 'IBM Plex Sans', sans-serif;">
+      <%= @recipe.user.first_name %>'s thoughts
+    </h4>
+    <%= @recipe.user_desc %>
+  </div>
+
+  <% if @recipe.user == current_user || (user_signed_in? && current_user.admin) %>
+    <%= render partial: 'shared/rec_edit_controls' %>
+  <% end %>
+
+</div>
+
+<br>
+<%# Recipe ingredients and method %>
+<div class="page-container" style="display:flex; justify-content:space-between; align-items:center;">
+  <div class="recipe-show-desc">
+    <h3 class="ing-header">
+      Ingredients:
+    </h3>
+
+    <ul class="ingr-list">
+      <% @recipe.ingredients.each do |ingr| %>
+        <li class="ingr-item"><%= ingr %></li>
+      <% end %>
+    </ul>
+
+  </div>
+
+  <div class="recipe-show-desc">
+  <h3 class="ing-header">
+      Method:
+    </h3>
+    <%= @recipe.desc %>
+  </div>
+</div>
+
+<br>
+
+<%# Recipe reviews section %>
+<div class="page-container" style="text-align:center;">
+  <%# Render all Reviews %>
+  <h2 class="rev-sect-header" style="margin: 20px auto;">Reviews</h2>
+  <div id="rev-section">
+    <% if @reviews.length > 0 %>
+      <% @reviews.each do |review| %>
+        <%= render partial: "reviews/review_card", locals: {review: review} %>
+      <% end %>
+    <% else %>
+      <h2 class="rev-sect-header-2">No Reviews Yet!</h2>
+    <% end %>
+  </div>
+</div>
+
+  <%# Review form section %>
+<div class="page-container new-review" style="text-align:center;">
+  <% if user_signed_in? %>
+    <h2 class="rev-sect-header" style="margin:20px auto; ">Leave a Review</h2>
+    <br>
+    <div class="create-rev" style="text-align:center; display:flex; justify-content:center;">
+      <% if user_signed_in? %>
+      <%= render 'review_form' %>
+      <% else %>
+        <h3 class="rev-sect-header-2" style="margin:0 auto;">Please Sign in to review</h3>
+      <% end %>
+    </div>
+  <% end %>
+</div>

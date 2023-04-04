@@ -1,0 +1,42 @@
+.rec-user-controls {
+  padding: 1em;
+  margin: 0.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  height: 13em;
+  color: white;
+  a {
+    font-size: 1.5em;
+  }
+}
+
+.btn-delete {
+  padding: 5px;
+  background-color: red;
+  transition: ease-in-out 0.3s;
+  text-decoration: none;
+  border-radius: 8px;
+  color:white;
+}
+
+.edit-btn {
+  padding: 5px;
+  background-color: rgb(151, 232, 232);
+  text-decoration: none;
+  color:teal;
+  transition: ease-in-out 0.3s;
+  border-radius: 8px;
+}
+
+.edit-btn:hover {
+  color: white;
+}
+
+.edit-btn:hover, .btn-delete:hover {
+  box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+  background-color: navy;
+}

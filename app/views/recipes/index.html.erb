@@ -1,1 +1,12 @@
-<h1>Recipes.</h1>
+<div class="rec-head-box">
+  <h1 class="recipes-header">Recipes.</h1>
+</div>
+
+<div class="page-container">
+  <div id="all-recipes">
+    <% @recipes.each do |recipe| %>
+      <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
+    <% end %>
+  </div>
+</div>
+<br>

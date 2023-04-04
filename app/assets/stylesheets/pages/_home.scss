@@ -1,4 +1,4 @@
-.page
+  // .page
 
 #home-about {
   display: flex;
@@ -25,9 +25,15 @@
 
 .banner-box {
   display: flex;
-  width: 47%;
+  width: 53%;
   transition: ease-in-out 0.3s;
   margin: 5px;
+  // box-shadow: 1px 3px 4px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+.banner-box:hover {
+  box-shadow: 4px 6px 6px rgba(0,0,0,0.2);
 }
 
 #mid-info {
@@ -43,6 +49,7 @@
   #mid-title {
     font-size: 1.2em;
     display: flex;
+    text-align: center;
     align-items: center;
     background-color: whitesmoke;
     border-radius: 10px;
@@ -64,20 +71,12 @@
   border-radius: 8px;
 }
 
-.info-sect {
-  font-weight: bold;
-  background-color: rgb(34, 120, 144);
-  color: white;
-  padding: 4px;
-  border-radius: 6px;
-  letter-spacing: 1px;
-}
-
 .recipe-desc {
   background-color: whitesmoke;
   border-radius: 4px;
-  width: 70%;
+  width: 90%;
   padding: 0.5em;
+  height: 8em;
   overflow-y: scroll;
   scrollbar-width: none; /* Hide scrollbar for Firefox */
   -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */

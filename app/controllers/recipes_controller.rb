@@ -3,11 +3,12 @@ class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.shuffle
   end
 
   def show
-    @recipe = params[:id]
+    @reviews = @recipe.reviews
+    @review = Review.new
   end
 
   def new
@@ -34,7 +35,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.delete
-    redirect_to user_path(current_user)
+    redirect_to recipes_path
   end
 
   private
@@ -44,6 +45,6 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :ingredients, :content)
+    params.require(:recipe).permit(:title, :ingredients, :content, :photo)
   end
 end

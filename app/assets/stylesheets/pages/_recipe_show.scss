@@ -1,0 +1,107 @@
+.recipes-header-show {
+  color: teal;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 6px;
+  margin: 10px 10px;
+  width: fit-content;
+}
+
+.rec-show-img {
+  width: 25em;
+  height: fit-content;
+}
+
+.show-info {
+  margin: auto 10px;
+  padding: 1em;
+  border-radius: 8px;
+  text-align: center;
+  height: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: teal;
+}
+
+.show-img {
+  width: 100%;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+  border-radius: 6px;
+}
+
+.info-pill {
+  padding: 0.5em;
+  text-align: left;
+  border-radius: 20px;
+  background-color: white;
+  width: 13em;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.user-rec-link {
+  text-decoration:none;
+  color: slateblue;
+  transition: ease-in-out 0.2s;
+}
+
+.user-rec-link:hover {
+  text-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+}
+
+.recipe-show-desc {
+  width: 30%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 90%;
+  border-radius: 25px;
+  padding: 0.5em;
+  background-color: bisque;
+}
+
+#rev-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.new-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rev-sect-header {
+  color: teal;
+  border-left: solid 2px black;
+  border-right: solid 2px black;
+  width: fit-content;
+  padding: 0.25em;
+  height: fit-content;
+}
+
+.ing-header {
+  padding: 0.5em;
+  margin: none;
+  background-color: white;
+  width: fit-content;
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+.user-rec-desc {
+  margin: auto;
+  text-align: left;
+  padding: 1em;
+  width: fit-content;
+  max-width: 20em;
+  max-height: 100%;
+}
+
+.rev-sect-header-2 {
+  color: teal;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  width: fit-content;
+  padding: 0.25em;
+  height: fit-content;
+}
