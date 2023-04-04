@@ -2,10 +2,11 @@
 <div class="recipe-card">
 
   <div class="card-header-box">
-    <h2 class="card-header"><%= recipe.title %></h2>
+    <h2 class="card-header"><%= recipe.title %></h2> <br>
   </div>
-
-  <br>
+  <a href="/users/<%=recipe.user.id%>" class="recipe-user-link">
+    <h4 style="background-color:whitesmoke; padding:0.2em; border-radius:1em;"><%= recipe.user.first_name %> <%= recipe.user.last_name %></h4>
+  </a>
 
   <div class="rec-card-img">
     <%= link_to recipe_path(recipe), class: "recipe-linker" do %>
