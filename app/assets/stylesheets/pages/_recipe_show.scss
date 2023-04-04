@@ -61,7 +61,7 @@
 #rev-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .new-review {
@@ -76,6 +76,7 @@
   border-right: solid 2px black;
   width: fit-content;
   padding: 0.25em;
+  height: fit-content;
 }
 
 .ing-header {
@@ -92,5 +93,15 @@
   text-align: left;
   padding: 1em;
   width: fit-content;
+  max-width: 20em;
   max-height: 100%;
+}
+
+.rev-sect-header-2 {
+  color: teal;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  width: fit-content;
+  padding: 0.25em;
+  height: fit-content;
 }

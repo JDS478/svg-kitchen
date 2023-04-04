@@ -1,12 +1,13 @@
-<% review_user_name = "#{review.user.first_name} #{review.user.last_name}" %>
-
 <div class="review-card">
-  <div class="review-info">
-    <a href="/user/<%= review.user.id %>" class="uni-link"></a><%= review_user_name %> <br>
-    <%= review.title %>
+  <div class="rev-title bg-rev">
+    <u style="  font-family: Verdana, Geneva, Tahoma, sans-serif;">
+      <%= review.title %> <br>
+    </u>
+    By <a href="/users/<%= review.user.id %>" class="rev-user">
+      <%= review.user.first_name %>
+    </a>
   </div>
-
-  <div class="review-content">
+  <div class="rev-content bg-rev">
     <%= review.content %>
   </div>
 </div>
