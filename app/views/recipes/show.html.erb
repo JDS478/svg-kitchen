@@ -27,8 +27,8 @@
   </div>
   </div>
 
-  <% if @recipe.user == current_user %>
-    <%= render partial: 'rec_edit_controls' %>
+  <% if @recipe.user == current_user || current_user.admin %>
+    <%= render partial: 'shared/rec_edit_controls' %>
   <% end %>
 
 </div>

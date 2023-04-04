@@ -1,0 +1,6 @@
+<div class="rec-user-controls">
+  <%= link_to 'Edit', edit_recipe_path, class: "edit-btn" %>
+  <%= link_to "Delete", recipe_path(@recipe),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+              class: "btn-delete" %>
+</div>
