@@ -1,20 +1,39 @@
+
+  <style>
+    form > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    label {
+      padding: 5px;
+      border-radius: 6px;
+      background-color: blanchedalmond;
+      margin-bottom: 4px;
+    }
+
+    textarea {
+      width: 221px;
+      height: 70px;
+      border-radius: 8px;
+    }
+  </style>
+
 <div class="new-rec-box">
+
   <%= simple_form_for(@recipe) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :user_desc %>
-
-    <%# Category Select %>
-    <label for="category">Category</label> <br>
-    <select name="category" id="category-select">
-      <% Category.all.each do |category| %>
-        <option value="<%=category.title%>"><%= category.title %></option>
-      <% end %>
-    </select>
-
-    <%= f.input :difficulty, collection: 0..5 %>
-    <%= f.input :ingredients, as: :text %>
-    <%= f.input :content %>
-    <%= f.input :photo %>
-    <%= f.submit %>
+    <%= f.input :title, input_html: {class: "ing-form-box"}, required: true  %> <br>
+    <%= f.input :user_desc, input_html: {class: "ingredients-text"}  %> <br>
+    <%= f.input :category, collection: Category.all.map { |category| [category.title, category.title] },
+    input_html: {class: "ingr-cat-select"}, label: "Category" %> <br>
+    <%= f.input :difficulty, collection: 0..5, input_html: {class: "ing-form-box"} %> <br>
+    <%= f.input :ingredients, as: :text, input_html: { class: "ingredients-text"} %> <br>
+    <%= f.input :content, input_html: {class: "ing-form-text"}  %> <br>
+    <%= f.input :photo, input_html: {class: "ingredients-photo-upload"}%>
+    <%# <input type="submit" value="create recipe" class="create-btn"> %>
+    <%= f.submit 'Create Recipe', class: 'create-btn' %>
   <% end %>
 </div>

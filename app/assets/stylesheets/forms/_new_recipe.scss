@@ -1,6 +1,59 @@
 .new-rec-box {
   display: flex;
+  border-radius: 1em;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  padding: 1em;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  background-color: rgb(116, 202, 202);
+}
+
+
+.ing-form-box {
+  font-family: 'IBM Plex Sans', sans-serif;
+  width: 95%;
+  border-radius: 1em;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: space-between;
+  height: 2em;
 }
+
+.ingredients-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 25em;
+  border-radius: 6px;
+  width: 80%;
+}
+.ingredients-box > textarea {
+  border-radius: 8px;
+}
+
+.ingredients-photo-upload {
+  padding: 0.5em;
+  background-color: teal;
+  margin-bottom: 5px;
+  width: 14em;
+  border-radius: 1em;
+  color: white;
+}
+
+.ingr-cat-select {
+  width: 10em;
+  height: 2em;
+  border-radius: 6px;
+}
+
+.ing-form-text {
+  width: 221px;
+  height: 69px;
+}
+
+// recipes-header-show

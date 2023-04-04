@@ -47,13 +47,7 @@
     <h3 class="ing-header">
       Ingredients:
     </h3>
-
-    <ul class="ingr-list">
-      <% @recipe.ingredients.each do |ingr| %>
-        <li class="ingr-item"><%= ingr %></li>
-      <% end %>
-    </ul>
-
+    <%= @recipe.ingredients %>
   </div>
 
   <div class="recipe-show-desc">
@@ -83,7 +77,7 @@
 
   <%# Review form section %>
 <div class="page-container new-review" style="text-align:center;">
-  <% if user_signed_in? %>
+  <% if user_signed_in? && @recipe.user != current_user %>
     <h2 class="rev-sect-header" style="margin:20px auto; ">Leave a Review</h2>
     <br>
     <div class="create-rev" style="text-align:center; display:flex; justify-content:center;">
