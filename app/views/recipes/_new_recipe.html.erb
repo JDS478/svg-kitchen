@@ -1,0 +1,20 @@
+<div class="new-rec-box">
+  <%= simple_form_for(@recipe) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :user_desc %>
+
+    <%# Category Select %>
+    <label for="category">Category</label> <br>
+    <select name="category" id="category-select">
+      <% Category.all.each do |category| %>
+        <option value="<%=category.title%>"><%= category.title %></option>
+      <% end %>
+    </select>
+
+    <%= f.input :difficulty, collection: 0..5 %>
+    <%= f.input :ingredients, as: :text %>
+    <%= f.input :content %>
+    <%= f.input :photo %>
+    <%= f.submit %>
+  <% end %>
+</div>

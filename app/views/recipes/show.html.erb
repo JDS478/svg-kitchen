@@ -6,7 +6,7 @@
   <div style="height:auto; width:60%; display:flex;">
     <div class="rec-show-img">
       <% if @recipe.photo.key %>
-        <%= cl_image_tag(@recipe.photo.key, class: "show-img", crop: fill) %>
+        <%= cl_image_tag(@recipe.photo.key, class: "show-img") %>
       <% else %>
         <img src="https://static.adelaidesfinest.com.au/uploads/2022/11/Small_Cake_Bundle_30841-1920x1280.jpg" alt="Def. cake image" class="show-img">
       <% end %>
@@ -60,7 +60,7 @@
   <h3 class="ing-header">
       Method:
     </h3>
-    <%= @recipe.desc %>
+    <%= @recipe.content %>
   </div>
 </div>
 
