@@ -1,9 +1,13 @@
 <h1 class="user-show-header"><%= current_user == @user ? "Hi #{@user.first_name}!" : "Welcome to #{@user.first_name}'s profile" %></h1>
 
+<% if @check_user %>
+  <%= link_to 'Edit Profile', edit_user_registration_path %>
+<% end %>
+
 <div class="page-container" style="display:flex; justify-content:space-between;">
   <%# User image %>
   <% if @user.photo.key %>
-    <%= cl_image_tag @user.photo.key, crop: fill, class: "user-show-img" %>
+    <%= cl_image_tag @user.photo.key, class: "user-show-img" %>
   <% else %>
     <img src="https://imageio.forbes.com/specials-images/imageserve/5f7ca34110dfe853a2be6f5c/0x0.jpg?format=jpg&width=1200"
     alt="Default image of chef" class="user-show-img">
@@ -16,6 +20,8 @@
         <%= render partial: 'post_card', locals: {post: post} %>
       <% end %>
     </div>
+  <% else %>
+    <h3 class="bio-header" style="height:fit-content;">Nothing Here Yet!</h3>
   <% end %>
 
   <% if @user.bio %>
@@ -30,7 +36,9 @@
 
 <h1 class="recipes-header"><%= @user.first_name %>'s Recipes.</h1>
 <div class="page-container" style="display:flex; flex-wrap:wrap; justify-content:space-evenly;">
-
+  <% if @user.recipes.length == 0 %>
+    <h3 class="bio-header" style="height:fit-content;">Nothing Here Yet!</h3>
+  <% end %>
   <%# user recipes %>
   <% @user.recipes.each do|recipe| %>
     <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>

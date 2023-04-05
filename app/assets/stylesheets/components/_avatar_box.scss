@@ -7,3 +7,11 @@
   padding: 0.3em;
   width: 12em;
 }
+
+.user-avatar-box {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 9em;
+  object-fit:cover;
+}

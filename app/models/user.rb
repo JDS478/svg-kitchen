@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_one_attached :photo
+
   has_many :posts, dependent: :destroy
   has_many :recipes, dependent: :destroy
   has_many :reviews, dependent: :destroy
