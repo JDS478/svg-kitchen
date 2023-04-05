@@ -1,0 +1,22 @@
+.post-card {
+  width: 25em;
+  height: 20em;
+  background-color: rgb(9, 193, 193);
+  border-radius: 1em;
+  padding: 0.5em;
+
+  margin: 8px auto;
+}
+
+.post-user {
+  width: 10em !important;
+  padding: 0.5em;
+  width: fit-content;
+  max-width: 80%;
+  background-color: white;
+  margin: 4px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 1em;
+}

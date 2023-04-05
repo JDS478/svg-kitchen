@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[show]
 
   def show
+    @posts = @user.posts
   end
 
   def update
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.permit(:user).require(:first_name, :last_name, :email)
   end

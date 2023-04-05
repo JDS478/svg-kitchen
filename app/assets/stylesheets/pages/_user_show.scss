@@ -16,6 +16,14 @@
   object-fit:cover;
 }
 
+.user-latest {
+  width: 35em;
+  height: 19em;
+  overflow-y: scroll;
+  background-color: whitesmoke;
+  padding: 0.5em;
+}
+
 .bio-header {
   color: teal;
   width: fit-content;
@@ -26,7 +34,7 @@
 
 .user-bio-box {
   width: 20em;
-  height: 15em;
+  height: 18em;
   overflow-y: scroll;
   background-color: whitesmoke;
   padding: 1em;
