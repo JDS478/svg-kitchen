@@ -37,3 +37,19 @@
 .post-del-btn:hover {
   background-color: navy;
 }
+
+.user-edit-btn {
+  background-color: rgb(34, 151, 151);
+  transition: ease-in-out 0.2s;
+  margin: 3px auto;
+  border-radius: 8em;
+  text-decoration: none;
+  color: white;
+  padding: 1em;
+  position: absolute;
+  top: 7em;
+}
+
+.user-edit-btn:hover {
+  background-color: navy;
+}
