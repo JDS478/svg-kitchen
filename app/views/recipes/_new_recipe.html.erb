@@ -1,39 +1,45 @@
 
-  <style>
-    form > div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      font-family: 'IBM Plex Sans', sans-serif;
-    }
-
-    label {
-      padding: 5px;
-      border-radius: 6px;
-      background-color: blanchedalmond;
-      margin-bottom: 4px;
-    }
-
-    textarea {
-      width: 221px;
-      height: 70px;
-      border-radius: 8px;
-    }
-  </style>
 
 <div class="new-rec-box">
 
-  <%= simple_form_for(@recipe) do |f| %>
-    <%= f.input :title, input_html: {class: "ing-form-box"}, required: true  %> <br>
-    <%= f.input :user_desc, input_html: {class: "ingredients-text"}  %> <br>
-    <%= f.input :category, collection: Category.all.map { |category| [category.title, category.title] },
-    input_html: {class: "ingr-cat-select"}, label: "Category" %> <br>
-    <%= f.input :difficulty, collection: 0..5, input_html: {class: "ing-form-box"} %> <br>
-    <%= f.input :ingredients, as: :text, input_html: { class: "ingredients-text"} %> <br>
-    <%= f.input :content, input_html: {class: "ing-form-text"}  %> <br>
-    <%= f.input :photo, input_html: {class: "ingredients-photo-upload"}%>
-    <%# <input type="submit" value="create recipe" class="create-btn"> %>
-    <%= f.submit 'Create Recipe', class: 'create-btn' %>
+  <%= form_for(@recipe) do |f| %>
+
+  <div class="form-sect">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="form-sect">
+    <%= f.label :user_description %>
+    <%= f.text_area :user_desc %>
+  </div>
+
+  <%# <%= form.text_area :message, size: "70x5" %>
+
+  <div class="form-sect">
+    <%= f.label :category %>
+    <%= f.select :category, @categories, input_html: {class: "category-select"} %>
+  </div>
+
+  <div class="form-sect">
+    <%= f.label :difficulty %>
+    <%= f.select :difficulty, (0..5) %>
+  </div>
+
+  <div class="form-sect">
+    <%= f.label :ingredients %>
+    <%= f.text_area :ingredients, size: "30x5" %>
+  </div>
+
+  <div class="form-sect">
+    <%= f.label :Method %>
+    <%= f.text_area :content, size: "30x5" %>
+  </div>
+
+  <div class="form-sect">
+    <%= f.file_field :photo %>
+  </div>
+
+  <%= f.submit id: "create_recipe" %>
   <% end %>
 </div>

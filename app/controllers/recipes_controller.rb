@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @categories = Category.all.map {|cat| cat.title}
   end
 
   def create
