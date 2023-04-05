@@ -20,8 +20,15 @@
   width: 35em;
   height: 19em;
   overflow-y: scroll;
-  background-color: whitesmoke;
+  background-color: blanchedalmond;
   padding: 0.5em;
+  border-radius: 6px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.user-latest::-webkit-scrollbar {
+  width: 0;
 }
 
 .bio-header {
@@ -39,4 +46,10 @@
   background-color: whitesmoke;
   padding: 1em;
   border-radius: 1em;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.user-bio-box::-webkit-scrollbar {
+  width: 0;
 }

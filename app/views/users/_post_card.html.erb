@@ -5,9 +5,17 @@
   <div class="post-user">
     <%= user_name %> <br>
     <% if user.photo.key %>
-      <%= cl_image_tag post.user.photo.key %>
+      <%= cl_image_tag post.user.photo.key, width: 40 %>
     <% else %>
       <img src="https://gravatar.com/avatar/11c3d8a919f0c0d0e57c207a68cb85e3?size=100&d=https%3A%2F%2Fassets.untappd.com%2Fsite%2Fassets%2Fimages%2Fdefault_avatar_v3_gravatar.jpg%3Fv%3D2" width="40">
     <% end %>
+  </div>
+
+  <div class="post-title-box">
+    <h3 class="post-title"><%= post.title %></h3>
+  </div>
+
+  <div class="post-content">
+    <%= post.content %>
   </div>
 </div>

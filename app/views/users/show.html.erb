@@ -26,7 +26,14 @@
   <% end %>
 </div>
 
-<div class="page-container">
+<br>
+
+<h1 class="recipes-header"><%= @user.first_name %>'s Recipes.</h1>
+<div class="page-container" style="display:flex; flex-wrap:wrap; justify-content:space-evenly;">
+
   <%# user recipes %>
+  <% @user.recipes.each do|recipe| %>
+    <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
+  <% end %>
   <%# User posts %>
 </div>
