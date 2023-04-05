@@ -17,7 +17,7 @@
     <div class="user-latest">
       <h3 class="bio-header" style="margin: 10px auto;"><%= @user.first_name %>'s latest</h3>
       <% @posts.each do |post| %>
-        <%= render partial: 'post_card', locals: {post: post} %>
+        <%= render partial: 'shared/post_card', locals: {post: post} %>
       <% end %>
     </div>
   <% else %>

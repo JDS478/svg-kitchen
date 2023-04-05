@@ -23,14 +23,16 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-  end
+  # def update
+  # end
 
   def destroy
-    @post.destroy
+    # raise
+    @post.delete
+    redirect_to posts_path
   end
 
   private

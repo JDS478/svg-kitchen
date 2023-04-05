@@ -13,4 +13,27 @@
   box-shadow: 0 2 3 rgba(0,0,0,0.2);
   color: rgb(178, 239, 239);
   background-color: black;
+
+
+}
+.post-del-btn {
+  background-color: red;
+  color: white;
+  text-align: center;
+  display: inline;
+  text-decoration: none;
+  height: 1em;
+  font-family: 'IBM Plex Sans', sans-serif;
+  width: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:ease-in-out 0.2s;
+  border-radius: 50%;
+  padding: 2px;
+  margin: 0;
+}
+
+.post-del-btn:hover {
+  background-color: navy;
 }

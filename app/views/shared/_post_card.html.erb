@@ -3,9 +3,14 @@
 
 <div class="post-card">
   <div class="post-user">
+  <%# DEL if user == current user %>
+    <% if post.user == current_user %>
+      <%= link_to 'X', post_path(post),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "post-del-btn" %>
+    <% end %>
     <%= user_name %> <br>
     <% if user.photo.key %>
-      <%= cl_image_tag post.user.photo.key, width: 40 %>
+      <%= cl_image_tag post.user.photo.key, width: 40, style: "border-radius:50%;" %>
     <% else %>
       <img src="https://gravatar.com/avatar/11c3d8a919f0c0d0e57c207a68cb85e3?size=100&d=https%3A%2F%2Fassets.untappd.com%2Fsite%2Fassets%2Fimages%2Fdefault_avatar_v3_gravatar.jpg%3Fv%3D2" width="40">
     <% end %>
