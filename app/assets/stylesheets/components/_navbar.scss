@@ -10,6 +10,7 @@
   padding: 1em;
   box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
 }
+
 // nav menu button
 #nav-menu {
   display: flex;
@@ -52,5 +53,30 @@
 }
 
 .logout-btn:hover {
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.new-rec-nav {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  text-decoration: none;
+  color: black;
+  padding: 3px;
+  transition: ease-in-out 0.2s;
+}
+
+.new-rec-nav:hover {
+  color: teal;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.chats-nav {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 3px;
+}
+
+.chats-nav:hover {
+  color: teal;
   text-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
