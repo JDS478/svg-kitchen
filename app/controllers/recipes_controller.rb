@@ -13,11 +13,14 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @categories = Category.all.map {|cat| cat.title}
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
+    @recipe.category = Category.find_by(title: params[:recipe][:category])
+    # raise
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
@@ -26,6 +29,7 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @categories = Category.all.map {|cat| cat.title}
   end
 
   def update
@@ -45,6 +49,6 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :ingredients, :content, :photo)
+    params.require(:recipe).permit(:title, :ingredients, :content, :user_desc, :difficulty, :photo)
   end
 end

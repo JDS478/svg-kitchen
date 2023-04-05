@@ -1,0 +1,45 @@
+
+
+<div class="new-rec-box">
+
+  <%= form_for(@recipe) do |f| %>
+
+  <div class="form-sect">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="form-sect">
+    <%= f.label :user_description %>
+    <%= f.text_area :user_desc %>
+  </div>
+
+  <%# <%= form.text_area :message, size: "70x5" %>
+
+  <div class="form-sect">
+    <%= f.label :category %>
+    <%= f.select :category, @categories, input_html: {class: "category-select"} %>
+  </div>
+
+  <div class="form-sect">
+    <%= f.label :difficulty %>
+    <%= f.select :difficulty, (0..5) %>
+  </div>
+
+  <div class="form-sect">
+    <%= f.label :ingredients %>
+    <%= f.text_area :ingredients, size: "30x5" %>
+  </div>
+
+  <div class="form-sect">
+    <%= f.label :Method %>
+    <%= f.text_area :content, size: "30x5" %>
+  </div>
+
+  <div class="form-sect">
+    <%= f.file_field :photo %>
+  </div>
+
+  <%= f.submit id: "create_recipe" %>
+  <% end %>
+</div>

@@ -6,7 +6,7 @@
   <div style="height:auto; width:60%; display:flex;">
     <div class="rec-show-img">
       <% if @recipe.photo.key %>
-        <%= cl_image_tag(@recipe.photo.key, class: "show-img", crop: fill) %>
+        <%= cl_image_tag(@recipe.photo.key, class: "show-img") %>
       <% else %>
         <img src="https://static.adelaidesfinest.com.au/uploads/2022/11/Small_Cake_Bundle_30841-1920x1280.jpg" alt="Def. cake image" class="show-img">
       <% end %>
@@ -47,20 +47,14 @@
     <h3 class="ing-header">
       Ingredients:
     </h3>
-
-    <ul class="ingr-list">
-      <% @recipe.ingredients.each do |ingr| %>
-        <li class="ingr-item"><%= ingr %></li>
-      <% end %>
-    </ul>
-
+    <%= @recipe.ingredients %>
   </div>
 
   <div class="recipe-show-desc">
   <h3 class="ing-header">
       Method:
     </h3>
-    <%= @recipe.desc %>
+    <%= @recipe.content %>
   </div>
 </div>
 
@@ -83,7 +77,7 @@
 
   <%# Review form section %>
 <div class="page-container new-review" style="text-align:center;">
-  <% if user_signed_in? %>
+  <% if user_signed_in? && @recipe.user != current_user %>
     <h2 class="rev-sect-header" style="margin:20px auto; ">Leave a Review</h2>
     <br>
     <div class="create-rev" style="text-align:center; display:flex; justify-content:center;">

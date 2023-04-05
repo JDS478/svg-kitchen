@@ -1,0 +1,95 @@
+.new-rec-box {
+  display: flex;
+  border-radius: 1em;
+  flex-direction: column;
+  margin: auto;
+  width: 45%;
+  font-size: 1.2em;
+  padding: 1em;
+  align-items: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  justify-content: space-between;
+  text-align: center;
+  background-color: rgb(116, 202, 202);
+}
+
+.form-sect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+
+#recipe_title {
+  width: 20em;
+  text-align: center;
+  height: 1.5em;
+  border-radius: 1em;
+}
+
+#recipe_user_desc {
+  border-radius: 1em;
+  height: 6em;
+  width: 20em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 1em;
+  border: 1px blanchedalmond solid;
+}
+
+#recipe_category {
+  border-radius: 1em;
+  width: 10em;
+  height: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#recipe_difficulty {
+  width: 10em;
+  height: 1.5em;
+  text-align: center;
+  border-radius: 1em;
+  font-weight: bold;
+}
+
+#recipe_ingredients {
+  border-radius: 1em;
+  height: 9em;
+  width: 20em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 1em;
+  border: 1px blanchedalmond solid;
+}
+
+#recipe_content {
+  border-radius: 1em;
+  height: 9em;
+  width: 20em;
+  padding: 1em;
+  border: 1px blanchedalmond solid;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+
+// SUBMIT
+#create_recipe {
+  padding: 1em;
+  border-radius: 5em;
+  color: aliceblue;
+  background-color: rgb(91, 171, 224);
+  transition: ease-in-out 0.2s;
+}
+#create_recipe:hover {
+  background-color: rgb(30, 94, 136);
+  cursor: pointer;
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+}
+
+#recipe_photo {
+  padding: 1em;
+  background-color: blanchedalmond;
+  border-radius: 6px;
+  width: 15em;
+}

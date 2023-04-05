@@ -1,5 +1,12 @@
-.submit-btn {
+.create-btn {
   border-radius: 8px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+  padding: 5px;
+  transition: ease-in-out 0.3s;
+  background-color: bisque;
+}
+.create-btn:hover {
+  background-color: rgb(140, 122, 100);
+  color:white;
+  cursor: pointer;
 }
