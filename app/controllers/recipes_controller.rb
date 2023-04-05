@@ -29,6 +29,7 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @categories = Category.all.map {|cat| cat.title}
   end
 
   def update

@@ -1,1 +1,5 @@
-<h1><%= @recipe.name %></h1>
+<h1 class="recipes-header-show" style="margin:10px auto; padding:5px; background-color:white;">Edit: <%= @recipe.title %></h1>
+
+<div class="page-contaier">
+  <%= render partial: 'edit_recipe' %>
+</div>
