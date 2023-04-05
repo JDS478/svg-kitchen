@@ -1,0 +1,55 @@
+.post-card {
+  width: 25em;
+  height: 18em;
+  background-color: rgb(9, 193, 193);
+  border-radius: 1em;
+  padding: 0.25em;
+
+  margin: 8px auto;
+}
+
+.post-user {
+  width: 10em !important;
+  padding: 0.5em;
+  width: fit-content;
+  max-width: 80%;
+  background-color: white;
+  margin: 4px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 1em;
+}
+
+.post-title {
+  color: teal;
+  border-left: solid 2px black;
+  border-right: solid 2px black;
+  padding: 3px;
+  width: fit-content;
+  margin: 5px auto;
+
+}
+
+.post-title-box {
+  background-color: white ;
+  margin: 4px auto;
+  width: 18em;
+  border-radius: 1em;
+  text-align: center;
+  padding: 2px;
+}
+
+.post-content {
+  background-color: white;
+  border-radius: 1em;
+  margin: 1px 4px;
+  padding: 1em;
+  height: 9em;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.post-content::-webkit-scrollbar {
+  width: 0;
+}

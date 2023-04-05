@@ -3,16 +3,24 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[show]
 
   def show
+    @posts = @user.posts
+    @check_user = current_user == @user
+    # raise
+  end
+
+  def edit
   end
 
   def update
-    @user = User.find(params[:id])
     @user.update(user_params)
+    redirect_to current_user
+    raise
   end
 
   private
+
   def user_params
-    params.permit(:user).require(:first_name, :last_name, :email)
+    params.permit(:user).require(:photo)
   end
 
   def set_user

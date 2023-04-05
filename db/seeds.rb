@@ -35,6 +35,14 @@ puts "=================="
 
 puts ""
 
+user_bio = [
+  "is a food scientist who works to develop new and innovative food products that are both healthy and delicious.",
+  "is a pastry chef who has a passion for creating beautiful and delicious desserts that delight the senses.",
+  "is a home cook who takes pride in creating delicious meals for her family and friends, using fresh and locally-sourced ingredients whenever possible.",
+  "is a nutritionist who is passionate about healthy eating and helping others improve their diets through mindful food choices.",
+  "is a professional chef who has dedicated his life to creating delicious and innovative dishes that showcase his love of food."
+]
+
 10.times do
   first = Faker::Name.first_name
   last = Faker::Name.last_name
@@ -42,7 +50,8 @@ puts ""
     first_name: first,
     last_name: last,
     email: "#{first}.#{last}@savage.com",
-    password: "123456"
+    password: "123456",
+    bio: "#{first} " + user_bio.sample
   )
 end
 
@@ -53,6 +62,7 @@ User.create(
   last_name: "Savage",
   password: "patt123",
   email: "js@savages.com",
+  bio: "Joel is a pastry chef who has a passion for creating beautiful and delicious desserts that delight the senses.",
   admin: true
 )
 puts "Admin #{User.last.first_name} created!"

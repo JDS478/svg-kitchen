@@ -1,6 +1,8 @@
 <div id="avatar-box">
   <% if current_user.photo.key %>
-    <%= cl_image_tag current_user.photo.key, crop: fill, width: 50 %>
+    <%= link_to user_path(current_user) do %>
+      <%= cl_image_tag current_user.photo.key, width: 50, class: "user-avatar-box" %>
+    <% end %>
   <% else %>
     <%= link_to user_path(current_user) do %>
       <img src="https://gravatar.com/avatar/11c3d8a919f0c0d0e57c207a68cb85e3?size=100&d=https%3A%2F%2Fassets.untappd.com%2Fsite%2Fassets%2Fimages%2Fdefault_avatar_v3_gravatar.jpg%3Fv%3D2" width="40">

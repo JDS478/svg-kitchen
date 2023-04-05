@@ -1,4 +1,9 @@
-<h1>Posts.</h1>
-<div class="page-container">
+<h1 class="recipes-header" style="background-color:white; margin:10px auto; padding:6px;">
+  Posts.
+</h1>
 
+<div class="page-container" style="display:flex; flex-wrap:wrap; justify-content:space-evenly;">
+  <% @posts.each do |post| %>
+    <%= render partial: 'shared/post_card', locals: {post: post} %>
+  <% end %>
 </div>

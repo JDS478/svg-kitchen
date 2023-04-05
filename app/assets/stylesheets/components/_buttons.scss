@@ -13,4 +13,43 @@
   box-shadow: 0 2 3 rgba(0,0,0,0.2);
   color: rgb(178, 239, 239);
   background-color: black;
+
+
+}
+.post-del-btn {
+  background-color: red;
+  color: white;
+  text-align: center;
+  display: inline;
+  text-decoration: none;
+  height: 1em;
+  font-family: 'IBM Plex Sans', sans-serif;
+  width: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:ease-in-out 0.2s;
+  border-radius: 50%;
+  padding: 2px;
+  margin: 0;
+}
+
+.post-del-btn:hover {
+  background-color: navy;
+}
+
+.user-edit-btn {
+  background-color: rgb(34, 151, 151);
+  transition: ease-in-out 0.2s;
+  margin: 3px auto;
+  border-radius: 8em;
+  text-decoration: none;
+  color: white;
+  padding: 1em;
+  position: absolute;
+  top: 7em;
+}
+
+.user-edit-btn:hover {
+  background-color: navy;
 }
