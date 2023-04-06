@@ -22,7 +22,7 @@
       <% end %>
     </div>
   <% else %>
-    <h3 class="bio-header" style="height:fit-content;">Nothing Here Yet!</h3>
+    <h3 class="bio-header" style="height:fit-content;">No Posts Yet!</h3>
   <% end %>
 
   <% if @user.bio %>
@@ -30,6 +30,8 @@
       <h3 class="bio-header">About <%= @user.first_name %></h3> <br>
       <%= @user.bio %>
     </div>
+  <% else %>
+    <h3 class="bio-header" style="height:fit-content;">No Bio Yet!</h3>
   <% end %>
 </div>
 

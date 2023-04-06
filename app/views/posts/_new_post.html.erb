@@ -1,0 +1,19 @@
+<div class="sign-in-box" style="border:2px solid black; width:25em; justify-content:center;">
+  <h2 class="post-form-header">Tell us what you're thinking...</h2>
+
+  <%= form_for(@new_post) do |f| %>
+
+    <div class="form-sect">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "new-post-title-box" %>
+    </div>
+
+    <div class="form-sect">
+      <%= f.label :content %>
+      <%= f.text_area :content, class: "post-content-sect" %>
+    </div>
+
+    <%= f.submit id: "create_post" %>
+
+  <% end %>
+</div>
