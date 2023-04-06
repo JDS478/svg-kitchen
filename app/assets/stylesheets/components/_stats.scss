@@ -1,0 +1,33 @@
+.stat-box {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'IBM Plex Sans', sans-serif;
+  width: 40em;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#stats-header {
+  border-top:2px solid black;
+  border-bottom:2px solid black;
+  color: teal;
+  padding: 0.2em;
+  font-size: 1.3em;
+  width: fit-content;
+}
+
+.stat-pill {
+  padding: 1em;
+  width: 10em;
+  border-radius: 1em;
+  background-color: beige;
+}
+
+.stat-img {
+  border: 4px solid black;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.3) !important;
+}

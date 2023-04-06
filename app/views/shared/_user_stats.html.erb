@@ -1,0 +1,24 @@
+<% user_name = current_user.first_name + " " + current_user.last_name %>
+
+<div class="stat-box">
+  <div class="stat-info">
+    <span id="stats-header"><%= user_name %></span>
+    <br>
+    <div class="stat-pill">
+      Posts: <%= current_user.posts.length %>
+    </div>
+    <div class="stat-pill">
+      Reviews: <%= current_user.reviews.length %>
+    </div>
+    <div class="stat-pill">
+      Recipes: <%= current_user.recipes.length %>
+    </div>
+  </div>
+
+  <% if current_user.photo.key %>
+    <%= cl_image_tag current_user.photo.key, class: "user-show-img stat-img" %>
+  <% else %>
+    <img src="https://imageio.forbes.com/specials-images/imageserve/5f7ca34110dfe853a2be6f5c/0x0.jpg?format=jpg&width=1200"
+    alt="Default image of chef" class="user-show-img stat-img">
+  <% end %>
+</div>

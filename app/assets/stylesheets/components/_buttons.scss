@@ -48,8 +48,35 @@
   padding: 1em;
   position: absolute;
   top: 7em;
+  left: 7em;
 }
 
 .user-edit-btn:hover {
   background-color: navy;
+}
+
+.backto-btn {
+  margin: 20px auto;
+  padding: 0.5em;
+  border-radius: 1em;
+  font-size: 1.2em;
+  width: fit-content;
+  background-color: wheat;
+  color: black;
+  transition: ease-in-out 0.2s;
+}
+.backto-btn > a {
+  text-decoration: none;
+  color: teal;
+  transition: ease-in-out 0.2s;
+}
+// #top-linker {
+//   color: black;
+//   transition: ease-in-out 0.2s;
+// }
+.backto-btn:hover {
+  background-color: rgb(108, 82, 34);
+  a{
+    color:white;
+  }
 }

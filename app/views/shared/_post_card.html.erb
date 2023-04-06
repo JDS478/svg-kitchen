@@ -8,7 +8,7 @@
       <%= link_to 'X', post_path(post),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "post-del-btn" %>
     <% end %>
-    <%= user_name %> <br>
+    <span style="font-family: 'IBM Plex Sans', sans-serif;"><%= user_name %></span> <br>
     <% if user.photo.key %>
       <%= cl_image_tag post.user.photo.key, width: 40, style: "border-radius:50%;" %>
     <% else %>

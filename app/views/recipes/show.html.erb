@@ -28,7 +28,7 @@
   </div>
 
   <div class="recipe-show-desc user-rec-desc">
-    <h4 style="margin:none; font-family: 'IBM Plex Sans', sans-serif;">
+    <h4 style="margin:none; font-family: 'IBM Plex Sans', sans-serif;" class="ing-header">
       <%= @recipe.user.first_name %>'s thoughts
     </h4>
     <%= @recipe.user_desc %>
@@ -76,8 +76,8 @@
 </div>
 
   <%# Review form section %>
-<div class="page-container new-review" style="text-align:center;">
   <% if user_signed_in? && @recipe.user != current_user %>
+<div class="page-container new-review" style="text-align:center;">
     <h2 class="rev-sect-header" style="margin:20px auto; ">Leave a Review</h2>
     <br>
     <div class="create-rev" style="text-align:center; display:flex; justify-content:center;">
@@ -87,5 +87,5 @@
         <h3 class="rev-sect-header-2" style="margin:0 auto;">Please Sign in to review</h3>
       <% end %>
     </div>
-  <% end %>
 </div>
+  <% end %>
