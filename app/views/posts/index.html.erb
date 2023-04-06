@@ -1,6 +1,13 @@
-<h1 class="recipes-header" style="background-color:white; margin:10px auto; padding:6px;">
-  Posts.
+<h1 class="recipes-header" style="background-color:white; margin:10px auto; height:fit-content; padding:6px;">
+  In the Kitchen.
 </h1>
+
+<% if user_signed_in? %>
+  <div class="page-container new_post-page">
+    <%# <h1 id="new-post-header">Create a new Post</h1> %>
+    <%= render partial: 'new_post' %>
+  </div>
+<% end %>
 
 <div class="page-container" style="display:flex; flex-wrap:wrap; justify-content:space-evenly;">
   <% @posts.each do |post| %>

@@ -4,20 +4,21 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.shuffle
+    @new_post = Post.new
   end
 
   def show
   end
 
-  def new
-    @post = Post.new
-  end
+  # def new
+  #   @post = Post.new
+  # end
 
   def create
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to posts_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -38,7 +39,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:post).require(:title, :content)
+    params.require(:post).permit(:title, :content)
   end
 
   def set_post

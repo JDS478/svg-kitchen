@@ -4,7 +4,7 @@
 <div class="post-card">
   <div class="post-user">
   <%# DEL if user == current user %>
-    <% if post.user == current_user %>
+    <% if post.user == current_user || (user_signed_in? && current_user.admin) %>
       <%= link_to 'X', post_path(post),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "post-del-btn" %>
     <% end %>
