@@ -3,8 +3,8 @@
   background-position: center;
   padding: 150px 10px;
   border-radius: 4px;
-  width: 100%;
-  margin-right: 1px;
+  height: 10em;
+  width: 45em;
   animation: shrink infinite 5s alternate;
   transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
   display: flex;
@@ -31,3 +31,12 @@
 // #my-element {
 //   transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
 // }
+
+.banner-sub-header {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  width: 25em;
+  text-align: center;
+  padding: 0.3em;
+  color: rgb(21, 118, 118);
+}

@@ -1,4 +1,10 @@
 <br>
+<span id="top"></span>
+<%#
+  <div id="discover-gap">
+    <a class="btn-dis" href="/recipes">Discover</a>
+  </div>
+   %>
 <div class="page-container">
 
   <%# Slideshow %>
@@ -13,43 +19,40 @@
 
 <br>
 
-  <div id="discover-gap">
-    <a class="btn-dis" href="/recipes">Discover</a>
+  <div id="mid-title">
+    <p>
+      Welcome to the <strong>Savage Kitchen</strong>, the ultimate destination for food lovers! Here you can showcase delicious recipes and connect with culinary professionals who can help take your cooking to the next level.
+      With our diverse collection of recipes from different cuisines and culinary traditions, you're sure to find something that suits your taste.
+    </p>
   </div>
 
 <br>
 
-<div class="page-container" style="display:flex; justify-content:space-between;">
+<div class="page-container" style="display:flex; justify-content:space-between; align-items:center;">
   <div id="mid-info">
-    <div id="mid-title">
-      <p>
-        Welcome to <strong>Savage Kitchen</strong>, the ultimate destination for food lovers! Our website is designed to showcase delicious recipes and connect you with culinary professionals who can help take your cooking to the next level.
-        With our diverse collection of recipes from different cuisines and culinary traditions, you're sure to find something that suits your taste.
-      </p>
-    </div>
-
-    <div id="recipe-showcase">
-      <div>
-        <img style="border-radius: 6px;" src="https://preppykitchen.com/wp-content/uploads/2022/05/Naked-Cake-Recipe-Card.jpg" alt="ROTD" width="300">
-      </div>
-      <br>
-      <div>
-        <span class="info-sect">Category: <%= @rand_recipe.category.title %></span> <span class="info-sect">Difficulty: <%= @rand_recipe.difficulty %></span>
-      </div>
-      <br>
-      <div class="recipe-card-desc">
-        <%= @rand_recipe.content %>
-      </div>
-    </div>
+      <h1 class="showcase-header">Todays Showcase.</h1>
+      <%= render partial: 'shared/recipe_card', locals: {recipe: @rand_recipe} %>
   </div>
 
   <div class="banner-box">
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.dorchestercollection.com/wp-content/uploads/Paris-le-meurice-cedric-grolet1.jpg);">
+    <h2 class="banner-sub-header">
+      Share you're food stories or even your thoughts on todays trends
+      and meet like-minded foodies!
+    </h2>
+    <br>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+    url(https://images.unsplash.com/photo-1589091637765-cbd0eff73a44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80);">
       <div style="padding:4px;">
-        <h4>Meet new food enthusiasts</h4>
+        <a href="/posts" class="enthusiast-link">
+          <h4>Meet new food enthusiasts</h4>
+        </a>
       </div>
     </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="backto-btn">
+  <a href="#top" id="top-linker">Top</a>
 </div>

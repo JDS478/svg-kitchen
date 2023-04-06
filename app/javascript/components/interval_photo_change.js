@@ -2,7 +2,7 @@
 
 const banner = document.querySelector(".banner");
 const images = [
-  "https://images.lifestyleasia.com/wp-content/uploads/2018/08/08101437/Insta-Dessert-21.png?tr=w-1200,h-900",
+  "https://images.unsplash.com/photo-1551645701-0e68cfc880f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   "https://imageio.forbes.com/specials-images/imageserve/5f7ca34110dfe853a2be6f5c/0x0.jpg?format=jpg&width=1200",
   "https://culinarylabschool.com/wp-content/uploads/2020/06/baking-and-pastry-school-2-scaled.jpg"
 ];

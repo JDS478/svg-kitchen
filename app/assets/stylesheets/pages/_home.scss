@@ -25,39 +25,48 @@
 
 .banner-box {
   display: flex;
-  width: 53%;
+  // width: 50em;
+  // text-align: center;
+  flex-direction: column;
+  // justify-content: space-between;
+  align-items: center;
   transition: ease-in-out 0.3s;
   margin: 5px;
-  // box-shadow: 1px 3px 4px rgba(0,0,0,0.2);
+  height: 40em;
   border-radius: 8px;
+  width: 45em;
 }
 
-.banner-box:hover {
-  box-shadow: 4px 6px 6px rgba(0,0,0,0.2);
-}
+// .banner-box:hover {
+//   box-shadow: 4px 6px 6px rgba(0,0,0,0.2);
+// }
 
 #mid-info {
   display: flex;
+  flex-direction: column;
   border-radius: 8px;
   background-color: teal;
   margin: 5px;
   align-items: center;
-  justify-content: space-between;
-  padding: 1em;
-  width: 50%;
+  justify-content: center;
+  // padding: 1em;
+  width: 40%;
 
-  #mid-title {
-    font-size: 1.2em;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    background-color: whitesmoke;
-    border-radius: 10px;
-    padding: 0.3px;
-    width: fit-content;
-    height: fit-content;
-    text-align: center;
-  }
+}
+#mid-title {
+  font-size: 1.2em;
+  display: flex;
+  text-align: center;
+  border-right: solid black 2px;
+  border-left: solid black 2px;
+  align-items: center;
+  background-color: whitesmoke;
+  // border-radius: 10px;
+  padding: 0.3px;
+  width: 35em;
+  margin: 5px auto;
+  height: fit-content;
+  text-align: center;
 }
 
 #recipe-showcase {
@@ -88,4 +97,15 @@
 #discover-gap {
   display: flex;
   justify-content: center;
+}
+
+.enthusiast-link {
+  text-decoration: none;
+}
+.enthusiast-link:hover {
+  color: rgb(177, 156, 35);
+}
+
+.showcase-header {
+  color: white;
 }
