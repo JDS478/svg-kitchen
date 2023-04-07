@@ -22,9 +22,9 @@
 }
 
 .post-title {
-  color: teal;
-  border-left: solid 2px black;
-  border-right: solid 2px black;
+  color: navy;
+  // border-left: solid 2px black;
+  // border-right: solid 2px black;
   padding: 3px;
   width: fit-content;
   margin: 5px auto;
@@ -43,9 +43,10 @@
 .post-content {
   background-color: white;
   border-radius: 1em;
-  margin: 1px 4px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin: 7px 4px;
   padding: 1em;
-  height: 9em;
+  height: 40%;
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;

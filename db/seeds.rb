@@ -12,8 +12,8 @@ Recipe.destroy_all
 puts "Recipes deleted!"
 Post.destroy_all
 puts "Posts deleted!"
-puts "Categories deleted!"
 Category.destroy_all
+puts "Categories deleted!"
 puts "------------------"
 
 puts ""
@@ -80,7 +80,7 @@ puts "=================="
 puts "Creating Categories..."
 puts "=================="
 
-categories = ["Breakfast", "Lunch", "Dinner", "Snacks"]
+categories = ["Breakfast", "Lunch", "Dinner", "Dessert", "Snacks"]
 categories.each do |category|
   Category.create(title: category)
 end
@@ -114,12 +114,40 @@ puts "=================="
 #   recipe.save
 # end
 # --- NOKIGIRI SEED FOR RECIPES ---
-user_desc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dum"
+
+user_descs = [
+  "This recipe is a classic comfort food that's perfect for a cozy night in. It's a hearty and filling dish that's sure to satisfy your cravings.",
+  "If you're looking for a quick and easy meal that's packed with flavor, then this recipe is for you. It's a simple yet delicious dish that you can whip up in no time.",
+  "This recipe is a great way to switch up your usual meal routine. It's a unique combination of ingredients that come together to create a delicious and satisfying dish.",
+  "If you're a fan of bold and spicy flavors, then you'll love this recipe. It's a fiery dish that's not for the faint of heart, but it's sure to leave your taste buds buzzing.",
+  "This recipe is a healthier take on a classic dish, without sacrificing any flavor. It's a guilt-free meal that you can feel good about indulging in."
+]
 # recipe_desc = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia"
-recipe_cont = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
-popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-5.times do
-  recipe = Recipe.new(title: Faker::Dessert.variety, user_desc: user_desc, content: recipe_cont, difficulty: (0..5).to_a.sample)
+recipe_conts = [
+  "In a large bowl, combine all of the ingredients and mix well. Pour the mixture into a greased baking dish and bake in the oven until golden brown and crispy.",
+  "Heat a large skillet over medium-high heat and add the ingredients to the pan. Cook for a few minutes, stirring occasionally, until everything is cooked through and tender.",
+  "Bring a pot of salted water to a boil and add the ingredients to the pot. Cook until tender, then drain the water and return the ingredients to the pot. Add any additional seasonings or sauces and stir well.",
+  "Preheat the grill to medium-high heat and place the ingredients on the grates. Grill for a few minutes on each side, until charred and cooked to your desired level of doneness.",
+  "Heat a large wok over high heat and add the ingredients to the pan. Stir-fry for a few minutes, until everything is cooked through and tender. Serve hot with rice or noodles."
+]
+
+ing_lists = [
+  "Flour, sugar, eggs, butter, baking powder, milk, vanilla extract, salt",
+  "Chicken breasts, bell peppers, onions, garlic, cumin, chili powder, oregano, salt, pepper, olive oil",
+  "Pasta, canned tomatoes, garlic, onion, basil, olive oil, salt, pepper, parmesan cheese",
+  "Ground beef, kidney beans, canned tomatoes, onions, garlic, chili powder, cumin, paprika, salt, pepper",
+  "Salmon fillets, asparagus, lemon, olive oil, garlic, salt, pepper, dill"
+]
+
+8.times do
+  recipe = Recipe.new(
+    title: Faker::Dessert.variety + " " + Faker::Dessert.variety,
+    user_desc: user_descs.sample,
+    content: recipe_conts.sample,
+    difficulty: (0..5).to_a.sample,
+    ingredients: ing_lists.sample
+  )
+
   recipe.user = User.all.sample
   recipe.category = Category.all.sample
   recipe.save
@@ -137,12 +165,40 @@ puts "=================="
 
 puts ""
 
-5.times do
+post_titles = [
+  "Brunch Goals: Delicious Avocado Toast",
+  "Tasty Tuesday: Creamy Mushroom Risotto",
+  "Spice Up Your Life: Flavorful Curry Chicken",
+  "Meatless Monday: Veggie-packed Stir Fry",
+  "Dessert Heaven: Decadent Chocolate Cake"
+]
+
+post_conts = [
+  "Today's breakfast was a delicious stack of pancakes topped with fresh berries and maple syrup. There's nothing quite
+  like starting the day with a sweet and satisfying meal like this. What's your go-to breakfast dish?",
+
+  "Dinner tonight was a mouthwatering plate of homemade lasagna. Layer upon layer of rich tomato sauce, melted cheese,
+  and perfectly cooked noodles - it's a classic dish that never disappoints. What's your favorite comfort food?",
+
+  "Snack time! These peanut butter energy balls are the perfect pick-me-up when you need a little boost of energy.
+  They're packed with protein and flavor, and they're so easy to make. What's your favorite healthy snack?",
+
+  "I love experimenting with new flavor combinations, and this dish is no exception. It's a fusion of Mexican and Asian
+  flavors, with juicy chicken, bell peppers, and onions cooked in a sweet and spicy sauce. What's the most unique dish you've ever tried?",
+
+  "Nothing beats a warm bowl of soup on a chilly day. This creamy tomato soup is the ultimate comfort food, and it's so easy to make.
+  All you need are a few simple ingredients and you're on your way to a cozy and satisfying meal. What's your favorite soup recipe?"
+]
+
+7.times do
   user = User.all.sample
-  Post.create(user: user, title: "This is a food post", content: "
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-    only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-    including versions of Lorem Ipsum.")
+  title_rand = post_titles.sample
+  cont_rand = post_conts.sample
+  Post.create(
+    user: user,
+    title: title_rand,
+    content: cont_rand
+  )
 end
 
 puts "=================="
