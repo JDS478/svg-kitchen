@@ -47,7 +47,12 @@
     <h3 class="ing-header">
       Ingredients:
     </h3>
-    <%= @recipe.ingredients %>
+
+    <ul>
+      <% @recipe.ingredients.split(/\s(?=\d)/).each do |ingredient| %>
+        <li><%= ingredient %></li>
+      <% end %>
+    </ul>
   </div>
 
   <div class="recipe-show-desc">
