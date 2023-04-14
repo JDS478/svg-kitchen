@@ -1,0 +1,24 @@
+.chatroom-header {
+  margin: 10px auto;
+  color:teal;
+  padding: 0.4em;
+  width: fit-content;
+  border-left: solid black 2px;
+  border-right: solid black 2px;
+}
+
+.container-chatroom {
+  width: 80%;
+  margin: 10px auto;
+  height: 30em;
+  overflow-y: scroll;
+  background-color: rgb(172, 198, 237);
+  // border-left: solid black 3px;
+  // border-right: solid black 3px;
+  padding: 0.5em;
+  border-radius: 1em;
+}
+
+// .messages-box {
+
+// }

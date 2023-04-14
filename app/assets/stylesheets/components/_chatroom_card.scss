@@ -1,0 +1,32 @@
+.chatroom-card {
+  display: flex;
+  width: 25em;
+  border-radius: 1em;
+  background-color: azure;
+  padding: 1em;
+  justify-content: space-between;
+  margin: 5px;
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+  align-items: center;
+}
+
+.join-btn {
+  background-color: teal;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1.5em;
+  color: white;
+  padding: 5px;
+  transition: ease-in-out 0.2s;
+}
+.join-btn:hover {
+  background-color: navy;
+}
+
+.chatroom-card-header {
+  color:teal;
+  padding: 0.4em;
+  width: fit-content;
+  border-top: solid black 2px;
+  border-bottom: solid black 2px;
+}

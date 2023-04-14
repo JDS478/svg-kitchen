@@ -1,0 +1,6 @@
+<h1>Chatrooms</h1>
+<div class="page-container" style="height: fit-content; display:flex; flex-wrap:wrap;">
+  <% @chatrooms.each do |chatroom| %>
+    <%= render partial: 'chatroom_card', locals: {chatroom: chatroom} %>
+  <% end %>
+</div>
