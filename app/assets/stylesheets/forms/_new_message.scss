@@ -1,0 +1,30 @@
+.new-mess-form {
+  display: flex;
+  align-items: center;
+}
+
+.message_content {
+  display: flex;
+  flex-grow: 1;
+}
+
+.message_content > input {
+  flex-grow: 1;
+  height: 2em;
+  border: black solid 2px;
+  border-radius: 4px;
+}
+
+.send-btn {
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 1.2em;
+  background-color: rgb(12, 84, 84);
+  color: white;
+  transition: ease-in-out 0.2s;
+}
+
+.send-btn:hover {
+  background-color: rgb(11, 45, 45);
+  cursor: pointer;
+}
