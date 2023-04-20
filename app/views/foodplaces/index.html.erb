@@ -1,0 +1,13 @@
+<div id="map" style="width:100%; height:500px;"
+data-controller="map"
+data-map-api-key-value="<%=ENV['MAPBOX_API_KEY'] %>"
+data-map-markers-value="<%= @markers.to_json %>"
+></div>
+
+<br>
+
+<div class="page-container" style="height:fit-content;">
+  <% @food_places.each do |place| %>
+    <%= render partial: 'location_card', locals: {place: place} %>
+  <% end %>
+</div>
