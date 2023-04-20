@@ -3,10 +3,11 @@ class FoodplacesController < ApplicationController
 
   def index
     @food_places = FoodPlace.all
-    @markers = @food_places.geocoded.map do |place|
+    @markers = @food_places.geocoded.map do |food_place|
       {
-        lat: place.latitude,
-        lng: place.longitude
+        lat: food_place.latitude,
+        lng: food_place.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {food_place: food_place})
       }
     end
   end
