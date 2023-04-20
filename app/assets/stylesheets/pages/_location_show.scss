@@ -1,0 +1,33 @@
+.location-img-box {
+  width: fit-content;
+}
+
+.loc-show-img {
+  width: 350px;
+  border-radius: 2em;
+  border: 2px solid black;
+}
+
+.location-content {
+  border: 2px solid black;
+  font-size: 1.35em;
+  width: 25%;
+  border-radius: 8px;
+  padding: 1em;
+  height: fit-content;
+  max-height: 286px;
+  overflow-y: scroll;
+}
+
+.loc-cont-title {
+  color: teal;
+  text-decoration: underline;
+}
+
+.fp-title {
+  padding: 0.5em;
+  color: teal;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  height: fit-content;
+}

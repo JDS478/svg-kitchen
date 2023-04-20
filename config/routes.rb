@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
-  resources :foodplaces, only: :index
+  resources :foodplaces, only: %i[index show]
   # Defines the root path route ("/")
   root 'pages#home'
 end

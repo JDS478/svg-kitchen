@@ -1,5 +1,5 @@
 class FoodplacesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @food_places = FoodPlace.all
@@ -10,5 +10,10 @@ class FoodplacesController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {food_place: food_place})
       }
     end
+  end
+
+
+  def show
+    @food_place = FoodPlace.find(params[:id])
   end
 end

@@ -4,6 +4,8 @@ class FoodPlace < ApplicationRecord
 
   has_one_attached :photo
 
+  has_many :reviews
+
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
 end
