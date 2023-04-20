@@ -15,6 +15,6 @@ class FoodplacesController < ApplicationController
 
   def show
     @food_place = FoodPlace.find(params[:id])
-    @food_place_review = FoodPlaceReview.new
+    # @food_place_review = FoodPlaceReview.new
   end
 end
