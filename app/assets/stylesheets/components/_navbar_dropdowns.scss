@@ -21,7 +21,7 @@
   top: 100%;
   left: 5em;
   text-align: center;
-  height: 3em;
+  height: 6em;
   transform: translateX(-50%);
   visibility: hidden;
   opacity: 0;
@@ -32,9 +32,11 @@
   background-color: rgba($color: #d6fafe, $alpha: 1.0);  padding: 10px;
   border-radius: 5px;
   transition: visibility 0s, opacity 0.5s ease-in-out;
+  z-index: 0;
 }
 
 .dropdown:hover .dropdown-content {
   visibility: visible;
   opacity: 1;
+  z-index: 10;
 }
