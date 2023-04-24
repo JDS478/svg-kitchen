@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
-  resources :foodplaces, only: %i[index show]
+  resources :foodplaces, only: %i[index show] do
+    resources :placereviews, only: %i[new create edit update]
+  end
   # Defines the root path route ("/")
   root 'pages#home'
 end

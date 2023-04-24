@@ -4,8 +4,7 @@ class FoodPlace < ApplicationRecord
 
   has_one_attached :photo
 
-  has_many :food_place_reviews, dependent: :destroy
-  has_many :reviews, through: :food_place_reviews
+  has_many :place_reviews, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
