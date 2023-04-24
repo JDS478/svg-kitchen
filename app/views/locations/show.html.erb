@@ -21,8 +21,9 @@
 </div>
 
 <%# TODO add a map with ONLY current food place marker %>
+<% if user_signed_in? %>
+  <%= render 'comments/form' %>
+<% end %>
 
 <div class="page-container">
-  <%= render 'comments/form' %>
-  <%= Comment.all.each {|place| place} %>
 </div>
