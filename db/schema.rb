@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_20_094650) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_24_110805) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -76,6 +76,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_20_094650) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "place_reviews", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "food_place_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["food_place_id"], name: "index_place_reviews_on_food_place_id"
+    t.index ["user_id"], name: "index_place_reviews_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -131,6 +142,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_20_094650) do
   add_foreign_key "categories", "recipes"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "place_reviews", "food_places"
+  add_foreign_key "place_reviews", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "recipes", "categories"
   add_foreign_key "recipes", "users"
