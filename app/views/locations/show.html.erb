@@ -30,7 +30,7 @@
 
   <div class="location-review-box">
     <% @comments.each do |comment| %>
-      <%= render partial: 'reviews/review_card', locals: {review: comment} %>
+      <%= render partial: 'comments/comment_card', locals: {comment: comment} %>
     <% end %>
   </div>
 
