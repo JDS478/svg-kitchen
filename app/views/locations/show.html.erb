@@ -1,3 +1,4 @@
+<br>
 <div class="page-container"
   style="height:fit-content; display:flex; justify-content:space-between;">
   <div class="location-img-box">
@@ -20,14 +21,22 @@
   </div>
 </div>
 
+<br>
 <%# TODO add a map with ONLY current food place marker %>
 
 <div class="page-container">
+
   <h2 class="loc-rev-header"><%= @location.comments.length > 0 ? 'Reviews' : 'No Reviews Yet!' %></h2> <br>
-  <% if user_signed_in? %>
+
+  <div class="location-review-box">
+    <% @comments.each do |comment| %>
+      <%= render partial: 'reviews/review_card', locals: {review: comment} %>
+    <% end %>
+  </div>
+
+  <br>
+
+  <% if user_signed_in? && @user_comments.count <= 3 %>
     <%= render 'comments/form' %>
   <% end %>
-  <br>
-  <div class="location-review-box">
-  </div>
 </div>

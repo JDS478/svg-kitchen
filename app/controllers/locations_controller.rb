@@ -17,5 +17,8 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
     @comment = Comment.new
     @comments = @location.comments
+
+    @user_comments = Comment.where(user_id: current_user.id) if user_signed_in?
   end
+
 end

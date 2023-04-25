@@ -1,0 +1,49 @@
+#new_comment {
+  font-family: 'IBM Plex Sans', sans-serif;
+  width: 20%;
+  background-color: blanchedalmond;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 10px auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#new_comment > div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  textarea {
+    height: 4em;
+  }
+}
+
+.comment-title-input {
+  border-radius: 1em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 5px;
+}
+
+.comment-content-input {
+  border-radius: 1em;
+  height: 8em !important;
+  padding: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.submit-btn {
+  padding: 4px;
+  margin: 10px auto;
+  border-radius: 1em;
+  border: 2px solid white;
+  background-color: teal;
+  color:white;
+  transition: ease-in-out 0.2s;
+}
+.submit-btn:hover {
+  color:white;
+  cursor: pointer;
+  background-color: rgb(3, 60, 60);
+}
