@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
+  resources :comments, only: :destroy
   resources :locations, only: %i[index show] do
-    resources :comments
+    resources :comments, only: %i[create]
   end
   # Defines the root path route ("/")
   root 'pages#home'

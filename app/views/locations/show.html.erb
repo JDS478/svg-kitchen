@@ -34,9 +34,9 @@
     <% end %>
   </div>
 
-  <br>
 
   <% if user_signed_in? && @user_comments.count <= 3 %>
     <%= render 'comments/form' %>
   <% end %>
+  <br>
 </div>

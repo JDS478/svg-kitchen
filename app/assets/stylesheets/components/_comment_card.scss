@@ -1,0 +1,42 @@
+.comment-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  justify-content: space-evenly;
+  height: 16em;
+  padding: 0.5em;
+  margin: 5px 10px;
+  width: 20em;
+  background-color: rgb(46, 150, 150);
+}
+
+.bg-com {
+  width: 80%;
+  background-color: whitesmoke;
+  text-align: center;
+  border-radius: 6px;
+  margin: 0.2em;
+  padding: 5px;
+}
+
+.comment-content {
+  height: 10em;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.comment-content::-webkit-scrollbar {
+  width: 0;
+}
+
+.comment-user {
+  text-decoration: none;
+  font-family: 'IBM Plex Sans', sans-serif;
+  transition: ease-in-out 0.2s;
+  color: navy;
+}
+.comment-user:hover {
+  text-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+}

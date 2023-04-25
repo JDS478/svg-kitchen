@@ -10,6 +10,14 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @location = Location.find(@comment.location.id)
+    @comment.destroy
+
+    redirect_to location_path(@location)
+  end
+
   private
 
   def comment_params

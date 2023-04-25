@@ -1,14 +1,22 @@
-<div class="review-card">
-  <div class="rev-title bg-rev">
-    <u style="  font-family: Verdana, Geneva, Tahoma, sans-serif;">
+<div class="comment-card">
+
+  <% if (comment.user == current_user) || (user_signed_in? && current_user.admin) %>
+      <%= link_to 'X',
+      comment_path(comment),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?", comment_param: 15},
+      class: "post-del-btn" %>
+    <% end %>
+
+  <div class="comment-title bg-rev">
+    <u style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
       <%= comment.title %> <br>
     </u>
-    By <a href="/users/<%= comment.user.id %>" class="rev-user">
+    By <a href="/users/<%= comment.user.id %>" class="comment-user">
       <%= comment.user.first_name %>
     </a>
 
   </div>
-  <div class="rev-content bg-rev">
+  <div class="comment-content bg-com">
     <%= comment.content %>
   </div>
 </div>
