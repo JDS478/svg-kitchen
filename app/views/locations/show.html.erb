@@ -21,9 +21,12 @@
 </div>
 
 <%# TODO add a map with ONLY current food place marker %>
-<% if user_signed_in? %>
-  <%= render 'comments/form' %>
-<% end %>
 
 <div class="page-container">
+  <h2 class="loc-rev-header"><%= @location.comments.length > 0 ? 'Reviews' : 'No Reviews Yet!' %></h2> <br>
+  <% if user_signed_in? %>
+    <%= render 'comments/form' %>
+  <% end %>
+  <br>
+
 </div>
