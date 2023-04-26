@@ -14,6 +14,10 @@ Post.destroy_all
 puts "Posts deleted!"
 Category.destroy_all
 puts "Categories deleted!"
+Location.destroy_all
+puts "Locations deleted!"
+Chatroom.destroy_all
+puts "Chatrooms deleted!"
 puts "------------------"
 
 puts ""
@@ -22,6 +26,8 @@ puts "Users count: #{User.all.length}"
 puts "Posts count: #{Post.all.length}"
 puts "Recipes count: #{Recipe.all.length}"
 puts "Categories count: #{Category.all.length}"
+puts "Chatrooms count: #{Chatroom.all.length}"
+puts "Location count: #{Location.all.length}"
 
 puts ""
 
@@ -94,26 +100,6 @@ puts ""
 puts "=================="
 puts "Creating Recipes..."
 puts "=================="
-
-# --- NOKIGIRI SEED FOR RECIPES ---
-# food_item = Faker::Dessert.variety
-# food_url = "https://www.allrecipes.com/search?q=#{food_item}"
-# results = []
-# html_file = URI.open(food_url).read
-# html_doc = Nokogiri::HTML.parse(html_file)
-
-# html_doc.search(".mntl-card-list-items").take(5).each do |element|
-#   name = element.search(".card__title-text").text.strip
-#   recipe_description = get_desc(element)
-#   results << [name, recipe_description]
-# end
-
-# results.each do |recipe|
-#   recipe = Recipe.new(title: recipe[0], content: recipe[1])
-#   recipe.user = User.all.sample
-#   recipe.save
-# end
-# --- NOKIGIRI SEED FOR RECIPES ---
 
 user_descs = [
   "This recipe is a classic comfort food that's perfect for a cozy night in. It's a hearty and filling dish that's sure to satisfy your cravings.",
@@ -207,10 +193,72 @@ puts "=================="
 
 puts ""
 
+puts "=================="
+puts "Creating Chatrooms..."
+puts "=================="
+
+puts ""
+Chatroom.create(name: 'General')
+Chatroom.create(name: 'About')
+Chatroom.create(name: 'Help')
+
+puts "=================="
+puts "Created Chatrooms!"
+puts "=================="
+
+puts ""
+
+puts "=================="
+puts "Creating Locations..."
+puts "=================="
+
+places_url = 'https://www.timeout.com/london/restaurants/londons-best-bakeries'
+
+html_file = URI.open(places_url).read
+html_doc = Nokogiri::HTML.parse(html_file)
+
+place_names = []
+html_doc.search("._h3_cuogz_1").each do |element|
+  place_names << element.text.strip
+end
+
+place_descs = []
+divs = html_doc.search('._summary_kc5qn_21')
+divs.each do |div|
+  first_p = div.at_css('p')
+  if first_p
+    place_descs << first_p.text
+  end
+end
+
+addresses = [
+  'Brentford ',
+  '132 Ridley Rd, London ',
+  '279 Grays Inn Rd, London',
+  '51a Blackstock Rd, Finsbury Park, London',
+  'Borough Market',
+  '159 Brick Ln, London E1 6SB',
+  'Unit 2, kingfisher house, Juniper Dr, London SW18 1TX',
+  'Bermondsey'
+]
+indexer = 0
+addresses.each do |address|
+  Location.create(address: address, name: place_names[indexer], description: place_descs[indexer])
+  indexer += 1
+end
+
+puts "=================="
+puts "Created Locations!"
+puts "=================="
+
+puts ""
+
 puts "Users count: #{User.all.length}"
 puts "Posts count: #{Post.all.length}"
 puts "Recipes count: #{Recipe.all.length}"
 puts "Categories count: #{Category.all.length}"
+puts "Chatrooms count: #{Chatroom.all.length}"
+puts "Locations count: #{Location.all.length}"
 
 puts ""
 

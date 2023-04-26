@@ -25,8 +25,9 @@
 }
 
 .location-info {
-  width: 7em;
-  line-height: 0.5em;
+  width: 10em;
+  height: 9em;
+  overflow-y: scroll;
 }
 
 .place-link {
