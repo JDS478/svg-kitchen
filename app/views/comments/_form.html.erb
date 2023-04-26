@@ -1,0 +1,5 @@
+<%= simple_form_for [@location, @comment] do |f| %>
+  <%= f.input :title, input_html: {class: 'comment-title-input'} %>
+  <%= f.input :content, input_html: {class: 'comment-content-input'} %>
+  <%= f.button :submit, class: 'submit-btn' %>
+<% end %>

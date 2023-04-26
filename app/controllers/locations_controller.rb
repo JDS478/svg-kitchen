@@ -1,8 +1,8 @@
-class FoodplacesController < ApplicationController
+class LocationsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @food_places = FoodPlace.all
+    @food_places = Location.all
     @markers = @food_places.geocoded.map do |food_place|
       {
         lat: food_place.latitude,
@@ -14,7 +14,11 @@ class FoodplacesController < ApplicationController
 
 
   def show
-    @food_place = FoodPlace.find(params[:id])
-    # @food_place_review = FoodPlaceReview.new
+    @location = Location.find(params[:id])
+    @comment = Comment.new
+    @comments = @location.comments
+
+    @user_comments = Comment.where(user_id: current_user.id) if user_signed_in?
   end
+
 end

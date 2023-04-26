@@ -31,3 +31,20 @@
   border-bottom: 2px solid black;
   height: fit-content;
 }
+
+.loc-rev-header {
+  color: teal;
+  padding: 0.5em;
+  border-top: solid black 2px;
+  border-bottom: solid black 2px;
+  width: fit-content;
+  margin: 10px auto;
+}
+
+.location-review-box {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

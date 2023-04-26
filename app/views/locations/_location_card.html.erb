@@ -1,4 +1,4 @@
-<%= link_to foodplace_path(place), class: 'place-link' do %>
+<%= link_to location_path(place), class: 'place-link' do %>
   <div class="location-card">
     <div class="location-img">
       <% if place.photo.key %>
@@ -10,9 +10,10 @@
     </div>
 
     <div class="location-info">
-      <%= place.name %> <br>
+      <h4>Name</h4>
+      <%= place.name %>
+      <h4>Address</h4>
       <%= place.address %> <br>
-      <%= place.description %>
     </div>
   </div>
 <% end %>
