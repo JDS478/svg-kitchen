@@ -95,26 +95,6 @@ puts "=================="
 puts "Creating Recipes..."
 puts "=================="
 
-# --- NOKIGIRI SEED FOR RECIPES ---
-# food_item = Faker::Dessert.variety
-# food_url = "https://www.allrecipes.com/search?q=#{food_item}"
-# results = []
-# html_file = URI.open(food_url).read
-# html_doc = Nokogiri::HTML.parse(html_file)
-
-# html_doc.search(".mntl-card-list-items").take(5).each do |element|
-#   name = element.search(".card__title-text").text.strip
-#   recipe_description = get_desc(element)
-#   results << [name, recipe_description]
-# end
-
-# results.each do |recipe|
-#   recipe = Recipe.new(title: recipe[0], content: recipe[1])
-#   recipe.user = User.all.sample
-#   recipe.save
-# end
-# --- NOKIGIRI SEED FOR RECIPES ---
-
 user_descs = [
   "This recipe is a classic comfort food that's perfect for a cozy night in. It's a hearty and filling dish that's sure to satisfy your cravings.",
   "If you're looking for a quick and easy meal that's packed with flavor, then this recipe is for you. It's a simple yet delicious dish that you can whip up in no time.",
@@ -207,10 +187,38 @@ puts "=================="
 
 puts ""
 
+puts "=================="
+puts "Creating Chatrooms..."
+puts "=================="
+
+puts ""
+Chatroom.create(name: 'General')
+Chatroom.create(name: 'About')
+Chatroom.create(name: 'Help')
+
+puts "=================="
+puts "Created Chatrooms!"
+puts "=================="
+
+puts ""
+
+puts "=================="
+puts "Creating Locations..."
+puts "=================="
+
+puts ""
+
+puts "=================="
+puts "Created Locations!"
+puts "=================="
+
+puts ""
+
 puts "Users count: #{User.all.length}"
 puts "Posts count: #{Post.all.length}"
 puts "Recipes count: #{Recipe.all.length}"
 puts "Categories count: #{Category.all.length}"
+puts "Chatrooms count: #{Chatroom.all.length}"
 
 puts ""
 
