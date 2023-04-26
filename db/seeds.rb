@@ -212,38 +212,38 @@ puts "=================="
 puts "Creating Locations..."
 puts "=================="
 
-places_url = 'https://www.tatler.com/article/best-cake-shops-bakeries-london-review'
+places_url = 'https://www.timeout.com/london/restaurants/londons-best-bakeries'
 
 html_file = URI.open(places_url).read
 html_doc = Nokogiri::HTML.parse(html_file)
 
 place_names = []
-html_doc.search("h2").each do |element|
+html_doc.search("._h3_cuogz_1").each do |element|
   place_names << element.text.strip
 end
 
-place_addr = []
-html_doc.search("div > p > em").each do |element|
-  place_addr << element.text.strip
-end
-
 place_descs = []
-
-divs = html_doc.search('.body__inner-container')
+divs = html_doc.search('._summary_kc5qn_21')
 divs.each do |div|
   first_p = div.at_css('p')
   if first_p
     place_descs << first_p.text
   end
 end
-place_descs.each_with_index {|place, index| place.split(" ").count <=2 ? place_descs.delete_at(index) : next}
 
-place_names.slice!(6, place_names.length - 6)
-place_addr.slice!(6, place_addr.length - 6)
-
+addresses = [
+  'Brentford ',
+  '132 Ridley Rd, London ',
+  '279 Grays Inn Rd, London',
+  '51a Blackstock Rd, Finsbury Park, London',
+  'Borough Market',
+  '159 Brick Ln, London E1 6SB',
+  'Unit 2, kingfisher house, Juniper Dr, London SW18 1TX',
+  'Bermondsey'
+]
 indexer = 0
-6.times do
-  Location.create(name: place_names[indexer], address: place_addr[indexer], description: place_descs[indexer] )
+addresses.each do |address|
+  Location.create(address: address, name: place_names[indexer], description: place_descs[indexer])
   indexer += 1
 end
 
