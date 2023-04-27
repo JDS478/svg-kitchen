@@ -241,14 +241,21 @@ addresses = [
   'Unit 2, kingfisher house, Juniper Dr, London SW18 1TX',
   'Bermondsey'
 ]
+
+imgs = []
+html_doc.search('._imageWrap_kc5qn_229 > img').each do |img|
+  # imgs << img.attribute("href").value
+  imgs << img.values[0]
+end
+
 indexer = 0
 addresses.each do |address|
-  Location.create(address: address, name: place_names[indexer], description: place_descs[indexer])
+  Location.create(address: address, name: place_names[indexer], description: place_descs[indexer], img_url: imgs[indexer])
   indexer += 1
 end
 
 puts "=================="
-puts "Created Locations!"
+puts "Created #{Location.all.count} Locations!"
 puts "=================="
 
 puts ""
