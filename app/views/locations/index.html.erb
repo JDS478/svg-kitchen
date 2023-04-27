@@ -7,7 +7,7 @@ data-map-markers-value="<%= @markers.to_json %>"
 <br>
 
 <div class="page-container"
-style="height:fit-content; display:flex; flex-wrap:wrap; justify-content:space-between;">
+style="height:fit-content; display:flex; flex-wrap:wrap; justify-content:space-evenly;">
   <% @food_places.each do |place| %>
     <%= render partial: 'location_card', locals: {place: place} %>
   <% end %>
