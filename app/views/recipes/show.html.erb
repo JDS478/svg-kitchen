@@ -7,6 +7,8 @@
     <div class="rec-show-img">
       <% if @recipe.photo.key %>
         <%= cl_image_tag(@recipe.photo.key, class: "show-img") %>
+      <% elsif @recipe.img_url %>
+        <img src="<%= @recipe.img_url %>" alt="Image url, not attached img" class="show-img">
       <% else %>
         <img src="https://static.adelaidesfinest.com.au/uploads/2022/11/Small_Cake_Bundle_30841-1920x1280.jpg" alt="Def. cake image" class="show-img">
       <% end %>
@@ -42,7 +44,7 @@
 
 <br>
 <%# Recipe ingredients and method %>
-<div class="page-container" style="display:flex; justify-content:space-between; align-items:center;">
+<div class="page-container" style="display:flex; justify-content:space-between; align-items:center; max-height:600px;">
   <div class="recipe-show-desc">
     <h3 class="ing-header">
       Ingredients:
@@ -55,7 +57,7 @@
     </ul>
   </div>
 
-  <div class="recipe-show-desc">
+  <div class="recipe-show-desc" style="width:45em;">
   <h3 class="ing-header">
       Method:
     </h3>

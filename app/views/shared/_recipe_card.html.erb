@@ -2,7 +2,9 @@
 <div class="recipe-card">
 
   <div class="card-header-box">
-    <h2 class="card-header"><%= recipe.title %></h2> <br>
+    <a class="card-title-link" href="recipes/<%= recipe.id %>">
+      <h2 class="card-header"><%= recipe.title %></h2> <br>
+    </a>
   </div>
   <a href="/users/<%=recipe.user.id%>" class="recipe-user-link">
     <h4 style="background-color:whitesmoke; padding:0.2em; border-radius:1em;"><%= recipe.user.first_name %> <%= recipe.user.last_name %></h4>
@@ -12,6 +14,8 @@
     <%= link_to recipe_path(recipe), class: "recipe-linker" do %>
       <% if recipe.photo.key %>
         <%= cl_image_tag(recipe.photo.key, class: "rec-img") %>
+      <% elsif recipe.img_url %>
+        <img src="<%= recipe.img_url %>" alt="ROTD" class="rec-img">
       <% else %>
         <img src="https://preppykitchen.com/wp-content/uploads/2022/05/Naked-Cake-Recipe-Card.jpg" alt="ROTD" class="rec-img">
       <% end %>
