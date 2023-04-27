@@ -2,6 +2,8 @@
   <h1 class="recipes-header">Recipes.</h1>
 </div>
 
+<%= render partial: 'shared/search_form' %>
+
 <div class="page-container">
   <div id="all-recipes">
     <% @recipes.each do |recipe| %>

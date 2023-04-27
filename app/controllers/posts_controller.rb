@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.shuffle
     @new_post = Post.new
+
+    @posts = Post.where("title ILIKE ?", "%#{params[:query]}%") if params[:query].present?
   end
 
   def show

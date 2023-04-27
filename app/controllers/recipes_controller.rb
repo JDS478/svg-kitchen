@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all.shuffle
+    @recipes = Recipe.where("title ILIKE ?", "%#{params[:query]}%") if params[:query].present?
   end
 
   def show
@@ -13,7 +14,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @categories = Category.all.map {|cat| cat.title}
+    @categories = Category.all.map { |cat| cat.title }
   end
 
   def create
