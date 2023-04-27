@@ -4,7 +4,7 @@
       <% if place.photo.key %>
         <%= cl_image_tag(place.photo.key, class: "loc-img") %>
       <% else %>
-        <img src="https://media.istockphoto.com/id/1283026526/photo/front-view-on-a-bakery-shop-building-on-a-piece-of-ground-3d-illustration.jpg?s=612x612&w=0&k=20&c=BeasxYNKUnwNLGcldcZ4JqY1DvDdQi0Ytlzcn8PDVSY="
+        <img src="<%= place.img_url %>"
         alt="default bakery image" class="loc-img">
       <% end %>
     </div>
