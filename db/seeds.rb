@@ -102,13 +102,6 @@ puts "Creating Recipes..."
 puts "=================="
 
 # OLD RECIPE CREATION---------------------------------------------------------------------------------------------------
-# user_descs = [
-#   "This recipe is a classic comfort food that's perfect for a cozy night in. It's a hearty and filling dish that's sure to satisfy your cravings.",
-#   "If you're looking for a quick and easy meal that's packed with flavor, then this recipe is for you. It's a simple yet delicious dish that you can whip up in no time.",
-#   "This recipe is a great way to switch up your usual meal routine. It's a unique combination of ingredients that come together to create a delicious and satisfying dish.",
-#   "If you're a fan of bold and spicy flavors, then you'll love this recipe. It's a fiery dish that's not for the faint of heart, but it's sure to leave your taste buds buzzing.",
-#   "This recipe is a healthier take on a classic dish, without sacrificing any flavor. It's a guilt-free meal that you can feel good about indulging in."
-# ]
 # # recipe_desc = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia"
 # recipe_conts = [
 #   "In a large bowl, combine all of the ingredients and mix well. Pour the mixture into a greased baking dish and bake in the oven until golden brown and crispy.",
@@ -141,6 +134,13 @@ puts "=================="
 # end
 # OLD RECIPE CREATION---------------------------------------------------------------------------------------------------
 
+user_descs = [
+  "This recipe is a classic comfort food that's perfect for a cozy night in. It's a hearty and filling dish that's sure to satisfy your cravings.",
+  "If you're looking for a quick and easy meal that's packed with flavor, then this recipe is for you. It's a simple yet delicious dish that you can whip up in no time.",
+  "This recipe is a great way to switch up your usual meal routine. It's a unique combination of ingredients that come together to create a delicious and satisfying dish.",
+  "This recipe is a healthier take on a classic dish, without sacrificing any flavor. It's a guilt-free meal that you can feel good about indulging in."
+]
+
 
 recipes = [
   'https://tasty.co/recipe/browned-butter-chocolate-chip-cookies',
@@ -151,14 +151,14 @@ recipes = [
   'https://tasty.co/recipe/classic-deviled-eggs'
 ]
 
-def recipe_parser(recipe_urls)
+def recipe_parser(recipe_urls, user_descriptions)
   # Repeater values
   recipe_title = ''
   recipe_img = ''
-  recipe_desc = ''
 
   recipe_urls.each do |url|
     # Rand values
+    recipe_desc = user_descriptions.sample
     difficulty_value = rand(0..5)
     recipe_user = User.all.sample
     recipe_category = Category.all.sample
@@ -171,7 +171,7 @@ def recipe_parser(recipe_urls)
 
     html_doc.search('.prep-steps > li').each { |item| recipe_method << item.text.strip }
 
-    html_doc.search('p.description').each { |item| recipe_desc = item.text.strip }
+    # html_doc.search('p.description').each { |item| recipe_desc = item.text.strip }
 
     html_doc.search('.ingredients__section > ul > li').each { |item| recipe_ings << item.text.strip }
 
@@ -192,7 +192,7 @@ def recipe_parser(recipe_urls)
   end
 end
 
-recipe_parser(recipes)
+recipe_parser(recipes, user_descs)
 
 
 puts "=================="
