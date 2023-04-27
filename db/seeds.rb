@@ -219,7 +219,7 @@ html_doc = Nokogiri::HTML.parse(html_file)
 
 place_names = []
 html_doc.search("._h3_cuogz_1").each do |element|
-  place_names << element.text.stripa_string.gsub(/[^0-9,-.]/, '')
+  place_names << element.text.strip.gsub(/[0-9,-.]/, '')
 end
 
 place_descs = []
@@ -237,7 +237,7 @@ addresses = [
   '279 Grays Inn Rd, London',
   '51a Blackstock Rd, Finsbury Park, London',
   'Borough Market',
-  '159 Brick Ln, London E1 6SB',
+  '159 Brick Ln, London',
   'kingfisher house, London SW18 1TX',
   'Bermondsey'
 ]
@@ -247,6 +247,9 @@ html_doc.search('._imageWrap_kc5qn_229 > img').each do |img|
   # imgs << img.attribute("href").value
   imgs << img.values[0]
 end
+imgs.insert(2,
+  'https://gailsbread.co.uk/wp-content/uploads/2021/09/Sevenoaks.jpg'
+)
 
 indexer = 0
 addresses.each do |address|
