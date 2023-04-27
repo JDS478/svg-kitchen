@@ -153,10 +153,8 @@ recipes = [
 
 def recipe_parser(recipe_urls)
   # Repeater values
-  recipe_method = []
   recipe_title = ''
   recipe_img = ''
-  recipe_ings = []
   recipe_desc = ''
 
   recipe_urls.each do |url|
@@ -164,6 +162,8 @@ def recipe_parser(recipe_urls)
     difficulty_value = rand(0..5)
     recipe_user = User.all.sample
     recipe_category = Category.all.sample
+    recipe_method = []
+    recipe_ings = []
     # Parsing iterations
     recipe_site = url
     html_file = URI.open(recipe_site).read
