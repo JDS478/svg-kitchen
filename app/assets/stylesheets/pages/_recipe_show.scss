@@ -56,6 +56,13 @@
   border-radius: 25px;
   padding: 0.5em;
   background-color: bisque;
+  max-height: inherit;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.recipe-show-desc::-webkit-scrollbar {
+  width: 0;
 }
 
 #rev-section {
@@ -104,4 +111,13 @@
   width: fit-content;
   padding: 0.25em;
   height: fit-content;
+}
+
+.card-title-link {
+  text-decoration: none;
+  transition: ease-in-out 0.2s;
+  display: inherit;
+}
+.card-title-link:hover {
+  text-shadow: 0px 2px 3px rgba(0,0,0,0.3);
 }

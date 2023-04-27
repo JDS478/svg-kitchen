@@ -101,43 +101,99 @@ puts "=================="
 puts "Creating Recipes..."
 puts "=================="
 
-user_descs = [
-  "This recipe is a classic comfort food that's perfect for a cozy night in. It's a hearty and filling dish that's sure to satisfy your cravings.",
-  "If you're looking for a quick and easy meal that's packed with flavor, then this recipe is for you. It's a simple yet delicious dish that you can whip up in no time.",
-  "This recipe is a great way to switch up your usual meal routine. It's a unique combination of ingredients that come together to create a delicious and satisfying dish.",
-  "If you're a fan of bold and spicy flavors, then you'll love this recipe. It's a fiery dish that's not for the faint of heart, but it's sure to leave your taste buds buzzing.",
-  "This recipe is a healthier take on a classic dish, without sacrificing any flavor. It's a guilt-free meal that you can feel good about indulging in."
-]
-# recipe_desc = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia"
-recipe_conts = [
-  "In a large bowl, combine all of the ingredients and mix well. Pour the mixture into a greased baking dish and bake in the oven until golden brown and crispy.",
-  "Heat a large skillet over medium-high heat and add the ingredients to the pan. Cook for a few minutes, stirring occasionally, until everything is cooked through and tender.",
-  "Bring a pot of salted water to a boil and add the ingredients to the pot. Cook until tender, then drain the water and return the ingredients to the pot. Add any additional seasonings or sauces and stir well.",
-  "Preheat the grill to medium-high heat and place the ingredients on the grates. Grill for a few minutes on each side, until charred and cooked to your desired level of doneness.",
-  "Heat a large wok over high heat and add the ingredients to the pan. Stir-fry for a few minutes, until everything is cooked through and tender. Serve hot with rice or noodles."
+# OLD RECIPE CREATION---------------------------------------------------------------------------------------------------
+# user_descs = [
+#   "This recipe is a classic comfort food that's perfect for a cozy night in. It's a hearty and filling dish that's sure to satisfy your cravings.",
+#   "If you're looking for a quick and easy meal that's packed with flavor, then this recipe is for you. It's a simple yet delicious dish that you can whip up in no time.",
+#   "This recipe is a great way to switch up your usual meal routine. It's a unique combination of ingredients that come together to create a delicious and satisfying dish.",
+#   "If you're a fan of bold and spicy flavors, then you'll love this recipe. It's a fiery dish that's not for the faint of heart, but it's sure to leave your taste buds buzzing.",
+#   "This recipe is a healthier take on a classic dish, without sacrificing any flavor. It's a guilt-free meal that you can feel good about indulging in."
+# ]
+# # recipe_desc = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia"
+# recipe_conts = [
+#   "In a large bowl, combine all of the ingredients and mix well. Pour the mixture into a greased baking dish and bake in the oven until golden brown and crispy.",
+#   "Heat a large skillet over medium-high heat and add the ingredients to the pan. Cook for a few minutes, stirring occasionally, until everything is cooked through and tender.",
+#   "Bring a pot of salted water to a boil and add the ingredients to the pot. Cook until tender, then drain the water and return the ingredients to the pot. Add any additional seasonings or sauces and stir well.",
+#   "Preheat the grill to medium-high heat and place the ingredients on the grates. Grill for a few minutes on each side, until charred and cooked to your desired level of doneness.",
+#   "Heat a large wok over high heat and add the ingredients to the pan. Stir-fry for a few minutes, until everything is cooked through and tender. Serve hot with rice or noodles."
+# ]
+
+# ing_lists = [
+#   "Flour, sugar, eggs, butter, baking powder, milk, vanilla extract, salt",
+#   "Chicken breasts, bell peppers, onions, garlic, cumin, chili powder, oregano, salt, pepper, olive oil",
+#   "Pasta, canned tomatoes, garlic, onion, basil, olive oil, salt, pepper, parmesan cheese",
+#   "Ground beef, kidney beans, canned tomatoes, onions, garlic, chili powder, cumin, paprika, salt, pepper",
+#   "Salmon fillets, asparagus, lemon, olive oil, garlic, salt, pepper, dill"
+# ]
+
+# 8.times do
+#   recipe = Recipe.new(
+#     title: Faker::Dessert.variety + " " + Faker::Dessert.variety,
+#     user_desc: user_descs.sample,
+#     content: recipe_conts.sample,
+#     difficulty: (0..5).to_a.sample,
+#     ingredients: ing_lists.sample
+#   )
+
+#   recipe.user = User.all.sample
+#   recipe.category = Category.all.sample
+#   recipe.save
+# end
+# OLD RECIPE CREATION---------------------------------------------------------------------------------------------------
+
+
+recipes = [
+  'https://tasty.co/recipe/browned-butter-chocolate-chip-cookies',
+  'https://tasty.co/recipe/rosemary-shortbread-and-sage-caramel-cookie-bars',
+  'https://tasty.co/recipe/chocolate-hazelnut-mug-cake',
+  'https://tasty.co/recipe/lemon-loaf-cake',
+  'https://tasty.co/recipe/garlic-butter-steak',
+  'https://tasty.co/recipe/classic-deviled-eggs'
 ]
 
-ing_lists = [
-  "Flour, sugar, eggs, butter, baking powder, milk, vanilla extract, salt",
-  "Chicken breasts, bell peppers, onions, garlic, cumin, chili powder, oregano, salt, pepper, olive oil",
-  "Pasta, canned tomatoes, garlic, onion, basil, olive oil, salt, pepper, parmesan cheese",
-  "Ground beef, kidney beans, canned tomatoes, onions, garlic, chili powder, cumin, paprika, salt, pepper",
-  "Salmon fillets, asparagus, lemon, olive oil, garlic, salt, pepper, dill"
-]
+def recipe_parser(recipe_urls)
+  # Repeater values
+  recipe_method = []
+  recipe_title = ''
+  recipe_img = ''
+  recipe_ings = []
+  recipe_desc = ''
 
-8.times do
-  recipe = Recipe.new(
-    title: Faker::Dessert.variety + " " + Faker::Dessert.variety,
-    user_desc: user_descs.sample,
-    content: recipe_conts.sample,
-    difficulty: (0..5).to_a.sample,
-    ingredients: ing_lists.sample
-  )
+  recipe_urls.each do |url|
+    # Rand values
+    difficulty_value = rand(0..5)
+    recipe_user = User.all.sample
+    recipe_category = Category.all.sample
+    # Parsing iterations
+    recipe_site = url
+    html_file = URI.open(recipe_site).read
+    html_doc = Nokogiri::HTML.parse(html_file)
 
-  recipe.user = User.all.sample
-  recipe.category = Category.all.sample
-  recipe.save
+    html_doc.search('.prep-steps > li').each { |item| recipe_method << item.text.strip }
+
+    html_doc.search('p.description').each { |item| recipe_desc = item.text.strip }
+
+    html_doc.search('.ingredients__section > ul > li').each { |item| recipe_ings << item.text.strip }
+
+    html_doc.search('.non-video > picture > img').each { |item| recipe_img = item.values[5] }
+    # p recipe_img
+    html_doc.search('.recipe-name').each { |name| recipe_title = name.text }
+
+    Recipe.create(
+      title: recipe_title,
+      user: recipe_user,
+      category: recipe_category,
+      img_url: recipe_img,
+      ingredients: recipe_ings.join(" "),
+      content: recipe_method.join(" "),
+      difficulty: difficulty_value,
+      user_desc: recipe_desc
+    )
+  end
 end
+
+recipe_parser(recipes)
+
 
 puts "=================="
 puts "#{Recipe.all.length} Recipes created!"
