@@ -219,7 +219,7 @@ html_doc = Nokogiri::HTML.parse(html_file)
 
 place_names = []
 html_doc.search("._h3_cuogz_1").each do |element|
-  place_names << element.text.strip
+  place_names << element.text.stripa_string.gsub(/[^0-9,-.]/, '')
 end
 
 place_descs = []
@@ -238,7 +238,7 @@ addresses = [
   '51a Blackstock Rd, Finsbury Park, London',
   'Borough Market',
   '159 Brick Ln, London E1 6SB',
-  'Unit 2, kingfisher house, Juniper Dr, London SW18 1TX',
+  'kingfisher house, London SW18 1TX',
   'Bermondsey'
 ]
 
