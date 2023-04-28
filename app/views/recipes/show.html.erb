@@ -3,7 +3,7 @@
 </div>
 <%# Main info section for recipe %>
 <div class="page-container" style="display:flex; justify-content:space-between; align-items:center;">
-  <div style="height:auto; width:60%; display:flex;">
+  <div style="height:auto; width:60%; display:flex; align-items:center;">
     <div class="rec-show-img">
       <% if @recipe.photo.key %>
         <%= cl_image_tag(@recipe.photo.key, class: "show-img") %>
