@@ -2,6 +2,17 @@
   In the Kitchen.
 </h1>
 
+<br>
+
+<div class="query-box" style="margin: 0 auto; width:fit-content;">
+  <form action="/posts" class="search-form">
+    <input type="text" class="search-box" name="query">
+    <input type="submit" value="search" class="search-button">
+  </form>
+</div>
+
+<br>
+
 <% if user_signed_in? %>
   <div class="page-container new_post-page">
     <%# <h1 id="new-post-header">Create a new Post</h1> %>

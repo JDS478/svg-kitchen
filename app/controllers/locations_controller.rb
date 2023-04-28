@@ -3,6 +3,8 @@ class LocationsController < ApplicationController
 
   def index
     @food_places = Location.all
+    @food_places = Location.where("name ILIKE ?", "%#{params[:query]}%") if params[:query].present?
+
     @markers = @food_places.geocoded.map do |food_place|
       {
         lat: food_place.latitude,
@@ -11,7 +13,6 @@ class LocationsController < ApplicationController
       }
     end
   end
-
 
   def show
     @location = Location.find(params[:id])
