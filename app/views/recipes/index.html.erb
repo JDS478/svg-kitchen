@@ -10,5 +10,7 @@
       <%= render partial: 'shared/recipe_card', locals: {recipe: recipe} %>
     <% end %>
   </div>
+
+  <%= will_paginate @posts %>
 </div>
 <br>
