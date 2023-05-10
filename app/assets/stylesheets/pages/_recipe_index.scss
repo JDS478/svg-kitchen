@@ -1,6 +1,6 @@
 #all-recipes {
   display: flex;
-  // justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -22,3 +22,10 @@
   margin: 10px 10px;
   width: fit-content;
 }
+
+.pagination {
+  text-align: center;
+  padding: 1em;
+}
+
+// .pagination> {}
