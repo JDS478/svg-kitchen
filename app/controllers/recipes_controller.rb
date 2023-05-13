@@ -3,8 +3,10 @@ class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @recipes = Recipe.all.order(created_at: :desc).paginate(page: params[:page], per_page: 3)
-    @recipes = Recipe.where("title ILIKE ?", "%#{params[:query]}%") if params[:query].present?
+    @recipes = Recipe.all.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
+    if params[:query].present?
+      @recipes = Recipe.where("title ILIKE ?", "%#{params[:query]}%").paginate(page: params[:page], per_page: 5)
+    end
   end
 
   def show
@@ -21,7 +23,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     @recipe.category = Category.find_by(title: params[:recipe][:category])
-    # raise
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else

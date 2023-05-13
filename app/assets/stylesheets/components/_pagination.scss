@@ -1,0 +1,22 @@
+.pagination {
+  font-family: 'IBM Plex Sans', sans-serif;
+  text-align: center;
+  word-spacing: 0.5em;
+  color: black;
+}
+
+.pagination > a {
+  text-decoration: none;
+  padding: 0.25em;
+  transition: ease-in-out 0.2s;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 1em;
+}
