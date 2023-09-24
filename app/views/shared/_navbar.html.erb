@@ -20,12 +20,10 @@
   </a>
 
   <div>
-    <%# <h4 class="chats-nav">Chats</h4> %>
-    <%= link_to 'Chats', chatrooms_path, class: 'chats-nav' %>
+    <%# TODO Add additional feature %>
   </div>
 
   <div>
-    <%# <%= user_signed_in? ? render 'shared/avatar_box' : link_to 'Login', new_user_session_path, id: "navbar-login" %>
     <% if user_signed_in? %>
       <%= render 'shared/avatar_box' %>
     <% else %>

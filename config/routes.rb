@@ -5,10 +5,6 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
-  resources :chatrooms do
-    resources :messages, only: :create
-  end
-
   resources :posts
   resources :users
 
